@@ -22,7 +22,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.masterviewcel.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://masterviewcel.vercel.app"
+  ),
   title: "Masterview Consults Engineering Limited | Oil & Gas, Civil, Fabrication & Logistics",
   description:
     "Masterview Consults Engineering Limited (M-CEL) is an indigenous engineering, procurement, construction, calibration, and logistics firm based in Port Harcourt, Rivers State, Nigeria. RC: 7361706.",
@@ -40,22 +42,40 @@ export const metadata: Metadata = {
   authors: [{ name: "Masterview Consults Engineering Limited" }],
   icons: {
     icon: "/images/m-cel-logo.jpg",
+    apple: "/images/m-cel-logo.jpg",
   },
   openGraph: {
-    title: "Masterview Consults Engineering Limited (M-CEL)",
+    title: "Masterview Consults Engineering Limited | Indigenous Engineering Solutions",
     description:
-      "Delivering engineering precision across oil & gas maintenance, calibration, civil works, and logistics. RC: 7361706.",
-    url: "https://www.masterviewcel.com",
+      "Precision oil & gas maintenance, ISO/IEC 17025 calibration, turnkey civil construction, and heavy industrial logistics in Nigeria. RC: 7361706.",
+    url: "https://masterviewcel.vercel.app",
     siteName: "Masterview Consults Engineering Limited",
-    images: [
-      {
-        url: "/images/m-cel-logo.jpg",
-        width: 800,
-        height: 600,
-      },
-    ],
     locale: "en_NG",
     type: "website",
+    images: [
+      {
+        url: "/images/og-preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Masterview Consults Engineering Limited - Engineering Solutions For All Enterprises",
+        type: "image/jpeg",
+      },
+      {
+        url: "/images/og-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Masterview Consults Engineering Limited Preview Card",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Masterview Consults Engineering Limited | Indigenous Engineering Solutions",
+    description:
+      "Precision oil & gas maintenance, ISO/IEC 17025 calibration, turnkey civil construction, and heavy industrial logistics in Nigeria. RC: 7361706.",
+    images: ["/images/og-preview.jpg"],
+    creator: "@masterviewcel",
   },
 };
 
