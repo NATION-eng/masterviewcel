@@ -28,17 +28,21 @@ export const metadata: Metadata = {
   ),
   title: "Masterview Consults Engineering Limited | Oil & Gas, Civil, Fabrication & Logistics",
   description:
-    "Masterview Consults Engineering Limited (M-CEL) is an indigenous engineering, procurement, construction, calibration, and logistics firm based in Port Harcourt, Rivers State, Nigeria. RC: 7361706.",
+    "Masterview Consults Engineering Limited (M-CEL) is a premier indigenous Nigerian engineering powerhouse based in Port Harcourt (RC: 7361706). We deliver ISO/IEC 17025 precision calibration, API-standard oil & gas maintenance, turnkey civil & defense infrastructure, ASME structural fabrication, and nationwide heavy haulage supply chain logistics.",
   keywords: [
-    "Masterview Consults",
-    "M-CEL",
-    "oil and gas maintenance Nigeria",
-    "calibration services ISO 17025",
-    "civil construction Rivers State",
-    "fabrication ASME",
-    "logistics Port Harcourt",
-    "TotalEnergies contractor",
-    "Nigerian Army Yenagoa",
+    "Masterview Consults Engineering Limited",
+    "M-CEL Port Harcourt",
+    "oil and gas maintenance Nigeria API",
+    "ISO IEC 17025 calibration Port Harcourt",
+    "civil engineering construction Rivers State",
+    "ASME structural fabrication welding",
+    "heavy haulage logistics supply chain Nigeria",
+    "TotalEnergies contractor Obagi Obite OML 58",
+    "Nigerian Army Yenagoa contractor",
+    "Librod Energy Onne LMP",
+    "NLNG Bonny contractor",
+    "Engr Jonathan David CEO",
+    "COREN registered engineering firm RC 7361706",
   ],
   authors: [{ name: "Masterview Consults Engineering Limited" }],
   icons: {
@@ -46,9 +50,9 @@ export const metadata: Metadata = {
     apple: "/images/m-cel-logo.jpg",
   },
   openGraph: {
-    title: "Masterview Consults Engineering Limited | Indigenous Engineering Solutions",
+    title: "Masterview Consults Engineering Limited (M-CEL)",
     description:
-      "Precision oil & gas maintenance, ISO/IEC 17025 calibration, turnkey civil construction, and heavy industrial logistics in Nigeria. RC: 7361706.",
+      "Delivering engineering precision, ISO/IEC 17025 calibration, oil & gas maintenance, and turnkey civil infrastructure across Nigeria. RC: 7361706.",
     url: "https://masterviewcel.vercel.app",
     siteName: "Masterview Consults Engineering Limited",
     locale: "en_NG",
@@ -72,9 +76,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Masterview Consults Engineering Limited | Indigenous Engineering Solutions",
+    title: "Masterview Consults Engineering Limited (M-CEL)",
     description:
-      "Precision oil & gas maintenance, ISO/IEC 17025 calibration, turnkey civil construction, and heavy industrial logistics in Nigeria. RC: 7361706.",
+      "Delivering engineering precision, ISO/IEC 17025 calibration, oil & gas maintenance, and turnkey civil infrastructure across Nigeria. RC: 7361706.",
     images: ["/images/og-preview.jpg"],
     creator: "@masterviewcel",
   },
@@ -85,8 +89,66 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    name: "Masterview Consults Engineering Limited",
+    alternateName: ["M-CEL", "Masterview Consults", "Masterview Engineering"],
+    url: "https://masterviewcel.vercel.app",
+    logo: "https://masterviewcel.vercel.app/images/m-cel-logo.jpg",
+    image: "https://masterviewcel.vercel.app/images/og-preview.jpg",
+    description:
+      "Masterview Consults Engineering Limited (M-CEL) is a premier indigenous Nigerian engineering powerhouse based in Port Harcourt (RC: 7361706). We deliver ISO/IEC 17025 precision calibration, API-standard oil & gas maintenance, turnkey civil & defense infrastructure, ASME structural fabrication, and nationwide heavy haulage supply chain logistics.",
+    identifier: "RC: 7361706",
+    taxID: "31664498-0001",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2nd Floor Salije Plaza, Ada George Road, Mgbuoba",
+      addressLocality: "Port Harcourt",
+      addressRegion: "Rivers State",
+      addressCountry: "NG",
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+2349036130587",
+        contactType: "customer service",
+        areaServed: "NG",
+        availableLanguage: ["English"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+2347063836336",
+        contactType: "technical procurement",
+        areaServed: "NG",
+        availableLanguage: ["English"],
+      },
+    ],
+    founder: {
+      "@type": "Person",
+      name: "Engr. Jonathan, David J.",
+      jobTitle: "Managing Director / CEO",
+      identifier: "COREN: R.79,476",
+    },
+    sameAs: ["https://www.masterviewcel.com"],
+    knowsAbout: [
+      "Oil and Gas Facility Maintenance (API)",
+      "Calibration and Metrology (ISO/IEC 17025)",
+      "Turnkey Civil and Defense Infrastructure",
+      "Structural Steel Fabrication and Welding (ASME)",
+      "Supply Chain & Heavy Haulage Logistics",
+      "3D BIM Architectural Modeling",
+    ],
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${montserrat.variable} antialiased bg-white text-slate-800`}>
         {children}
 

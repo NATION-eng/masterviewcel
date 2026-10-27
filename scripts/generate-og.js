@@ -109,11 +109,11 @@ async function createOgImage() {
 
     <!-- Description & 4 Pillars -->
     <g transform="translate(60, 360)">
-      <text x="0" y="0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1" width="500">
-        World-standard oil &amp; gas maintenance, ISO/IEC 17025 calibration,
+      <text x="0" y="0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#cbd5e1">
+        Delivering engineering precision across oil &amp; gas maintenance,
       </text>
-      <text x="0" y="24" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">
-        turnkey civil construction, and heavy industrial logistics in Nigeria.
+      <text x="0" y="24" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#cbd5e1">
+        ISO/IEC 17025 calibration, turnkey civil works &amp; logistics in Nigeria.
       </text>
     </g>
 
