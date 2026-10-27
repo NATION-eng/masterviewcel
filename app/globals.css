@@ -9,27 +9,47 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   color: #1e293b;
   background-color: #ffffff;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 9px;
+/* Touch Action helper for interactive sliders */
+.touch-pan-y {
+  touch-action: pan-y;
 }
-::-webkit-scrollbar-track {
-  background: #f8fafc;
+
+/* Hide scrollbar for clean horizontal filmstrips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+
+/* Custom Scrollbar for desktop */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f8fafc;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
 }
 
 /* Signature Reference Notched Polygon on Top Bar */
@@ -46,7 +66,13 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 25s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 18s;
+  }
 }
 
 .animate-marquee:hover {
@@ -71,4 +97,9 @@ body {
 
 .whatsapp-float {
   animation: pulse-ring 2.2s infinite;
+}
+
+/* Safe Area Inset Support for modern mobile devices (e.g. iPhone Home Bar) */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
 }

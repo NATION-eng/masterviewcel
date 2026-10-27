@@ -1,9 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, LayoutGrid, Menu, X, ChevronDown, PhoneCall } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  Search, 
+  LayoutGrid, 
+  Menu, 
+  X, 
+  PhoneCall, 
+  Home, 
+  ShieldCheck, 
+  Briefcase, 
+  Truck, 
+  Building2, 
+  Award, 
+  Mail, 
+  ArrowRight,
+  MessageSquare
+} from "lucide-react";
 
 interface NavbarProps {
   onOpenRfq: () => void;
@@ -13,14 +29,35 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileOpen]);
+
+  // Close drawer on escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-14 h-14 overflow-hidden">
+          {/* Brand Logo & Compact Responsive Name */}
+          <Link href="/" className="flex items-center space-x-2.5 sm:space-x-3 group">
+            <div className="relative w-11 h-11 sm:w-14 sm:h-14 overflow-hidden shrink-0">
               <Image
                 src="/images/m-cel-logo.jpg"
                 alt="Masterview Consults Engineering Limited Logo"
@@ -29,18 +66,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                 priority
               />
             </div>
-            <div className="hidden sm:block leading-none">
-              <span className="block text-xl font-extrabold text-mcel-purple tracking-tight font-heading group-hover:text-mcel-purpleLight transition-colors">
+            <div className="leading-tight">
+              <span className="block text-base sm:text-xl font-extrabold text-mcel-purple tracking-tight font-heading group-hover:text-mcel-purpleLight transition-colors">
                 MASTERVIEW
               </span>
-              <span className="block text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-1">
+              <span className="block text-[9px] sm:text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">
                 Consults Engineering Ltd
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Menu (Matching Reference Styling) */}
-          <nav className="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+          {/* Desktop Navigation Menu */}
+          <nav className="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
             <Link href="/" className="hover:text-mcel-purple text-mcel-purple transition-colors py-2 flex items-center gap-1">
               <span>Home</span>
             </Link>
@@ -53,11 +90,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
               <span>Services</span>
             </Link>
 
-            {/* Dedicated Logistics Link with Badge */}
+            {/* Dedicated Logistics Link with Special Badge */}
             <Link href="/logistics" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1.5 font-bold text-slate-900 group">
               <span>Logistics Hub</span>
-              <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-100 text-amber-800 font-extrabold uppercase group-hover:bg-amber-400 transition-colors">
-                New
+              <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-400 text-purple-950 font-extrabold uppercase shadow-sm group-hover:bg-amber-300 transition-colors">
+                Special
               </span>
             </Link>
 
@@ -74,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
             </Link>
           </nav>
 
-          {/* Right Reference Icons (Search & 4-Dot Drawer Icon) */}
+          {/* Desktop Right Action Controls */}
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={onOpenRfq}
@@ -96,77 +133,236 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
 
             <button
               onClick={onOpenRfq}
-              className="px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-mcel-purple hover:bg-mcel-purpleLight transition-all shadow-sm active:scale-95"
+              className="px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-mcel-purple hover:bg-mcel-purpleLight transition-all shadow-sm active:scale-95 cursor-pointer"
             >
               Request Quote
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Right Controls: Quote Pill + Hamburger Button */}
           <div className="flex items-center space-x-2 lg:hidden">
             <button
               onClick={onOpenRfq}
-              className="px-3 py-1.5 rounded bg-mcel-purple text-white text-xs font-bold"
+              className="px-3 py-1.5 rounded-full bg-mcel-purple hover:bg-mcel-purpleLight text-white text-[11px] font-bold tracking-wide shadow-sm active:scale-95 cursor-pointer"
             >
               Quote
             </button>
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none"
-              aria-label="Toggle navigation"
+              onClick={() => setMobileOpen(true)}
+              className="p-2 rounded-xl text-slate-800 hover:bg-slate-100 active:scale-95 transition-all focus:outline-none"
+              aria-label="Open mobile menu"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-6 shadow-xl space-y-4 animate-in slide-in-from-top-2">
-          <nav className="flex flex-col space-y-3 text-base font-semibold text-slate-800">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple">
-              Home
-            </Link>
-            <Link href="/#about" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple">
-              About Corporate Profile
-            </Link>
-            <Link href="/#services" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple">
-              8 Core Services
-            </Link>
-            <Link href="/logistics" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple flex items-center justify-between">
-              <span>Logistics & Supply Chain Hub</span>
-              <span className="text-xs bg-amber-400 text-purple-950 font-bold px-2 py-0.5 rounded">Special</span>
-            </Link>
-            <Link href="/projects" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple">
-              Projects & Case Studies
-            </Link>
-            <Link href="/#hse" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 hover:text-mcel-purple">
-              HSE & Quality Assurance
-            </Link>
-            <Link href="/contact" onClick={() => setMobileOpen(false)} className="py-2 hover:text-mcel-purple">
-              Contact / Tender Desk
-            </Link>
-          </nav>
+      {/* Exceptional Animated Mobile Drawer (Framer Motion) */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden">
+            
+            {/* Backdrop Blur Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setMobileOpen(false)}
+              className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
+            />
 
-          <div className="pt-4 border-t border-slate-100 flex flex-col space-y-3">
-            <div className="flex items-center space-x-2 text-xs font-semibold text-slate-600">
-              <PhoneCall className="w-4 h-4 text-amber-500" />
-              <span>09036130587 / 07063836336</span>
-            </div>
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                onOpenRfq();
-              }}
-              className="w-full py-3 rounded-xl font-bold text-white bg-mcel-purple text-center shadow"
+            {/* Slide-Over Drawer Sheet */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 28, stiffness: 280 }}
+              className="fixed top-0 right-0 bottom-0 w-[88vw] max-w-sm bg-white shadow-2xl flex flex-col z-50 overflow-hidden"
             >
-              Request Free Consultation
-            </button>
+              {/* Drawer Header */}
+              <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 shrink-0">
+                <div className="flex items-center space-x-2.5">
+                  <div className="relative w-9 h-9 shrink-0">
+                    <Image
+                      src="/images/m-cel-logo.jpg"
+                      alt="M-CEL Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <span className="block text-sm font-extrabold text-mcel-purple font-heading leading-none">
+                      MASTERVIEW
+                    </span>
+                    <span className="block text-[9px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">
+                      Consults Eng. Ltd
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="w-9 h-9 rounded-full bg-slate-200/80 hover:bg-slate-300 flex items-center justify-center text-slate-700 active:scale-95 transition-all cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Navigation Links Scroll Container */}
+              <div className="flex-1 overflow-y-auto px-5 py-4 space-y-1 text-slate-800">
+                
+                <Link
+                  href="/"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Home className="w-4 h-4" />
+                  </div>
+                  <span>Home</span>
+                </Link>
+
+                <Link
+                  href="/#about"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <span>About Corporate Profile</span>
+                </Link>
+
+                <Link
+                  href="/#services"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Briefcase className="w-4 h-4" />
+                  </div>
+                  <span>8 Core Engineering Pillars</span>
+                </Link>
+
+                {/* Highlighted Logistics Hub */}
+                <Link
+                  href="/logistics"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-purple-950 transition-colors font-bold text-sm border border-amber-200/70"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-lg bg-amber-400 text-purple-950 flex items-center justify-center shrink-0">
+                      <Truck className="w-4 h-4" />
+                    </div>
+                    <span>Logistics & Haulage Hub</span>
+                  </div>
+                  <span className="text-[10px] bg-amber-400 text-purple-950 font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">
+                    Special
+                  </span>
+                </Link>
+
+                <Link
+                  href="/projects"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Building2 className="w-4 h-4" />
+                  </div>
+                  <span>Projects & Case Studies</span>
+                </Link>
+
+                <Link
+                  href="/#hse"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Award className="w-4 h-4" />
+                  </div>
+                  <span>HSE & Quality Standards</span>
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <span>Contact / Tender Desk</span>
+                </Link>
+
+                {/* Direct Tender Desk Call Box */}
+                <div className="mt-5 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
+                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                    Direct Engineering Desks:
+                  </p>
+                  
+                  <a
+                    href="tel:09036130587"
+                    className="flex items-center space-x-2.5 text-xs font-bold text-slate-800 hover:text-mcel-purple"
+                  >
+                    <PhoneCall className="w-4 h-4 text-amber-500 shrink-0" />
+                    <span>09036130587 (Operations)</span>
+                  </a>
+
+                  <a
+                    href="tel:07063836336"
+                    className="flex items-center space-x-2.5 text-xs font-bold text-slate-800 hover:text-mcel-purple"
+                  >
+                    <PhoneCall className="w-4 h-4 text-amber-500 shrink-0" />
+                    <span>07063836336 (Procurement)</span>
+                  </a>
+
+                  <a
+                    href="mailto:sales@masterview-eng.com"
+                    className="flex items-center space-x-2.5 text-xs font-medium text-slate-600 hover:text-mcel-purple"
+                  >
+                    <Mail className="w-4 h-4 text-mcel-purple shrink-0" />
+                    <span>sales@masterview-eng.com</span>
+                  </a>
+                </div>
+
+              </div>
+
+              {/* Drawer Bottom Action Area */}
+              <div className="p-5 border-t border-slate-100 bg-white space-y-2.5 shrink-0 pb-safe">
+                <a
+                  href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults%20Engineering,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-98"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Chat Direct on WhatsApp</span>
+                </a>
+
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    onOpenRfq();
+                  }}
+                  className="w-full py-3 rounded-xl bg-mcel-purple hover:bg-mcel-purpleLight text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer"
+                >
+                  <span>Request Engineering Quote</span>
+                  <ArrowRight className="w-4 h-4 text-amber-400" />
+                </button>
+
+                <p className="text-[10px] text-center text-slate-400 font-mono pt-1">
+                  CAC RC: 7361706 • COREN: R.79,476 • Port Harcourt
+                </p>
+              </div>
+
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </header>
   );
 };
