@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, HardHat } from "lucide-react";
@@ -27,7 +27,7 @@ const slides = [
     desc: "From inventory optimization and SAP material management to heavy-duty maritime port haulage and doorstep delivery, we drive seamless industrial supply continuity.",
     cta: "EXPLORE LOGISTICS",
     service: "Logistics",
-    bgImage: "/images/hero-warehouse.jpg",
+    bgImage: "/images/hero-plane-globe.jpg",
     rightGraphic: "/images/logistics/port-container-terminal.jpg",
     graphicAlt: "Port Container Haulage & Supply Chain Terminal",
   },
@@ -41,20 +41,67 @@ const slides = [
     rightGraphic: "/images/army/army-5-full-pitch.jpg",
     graphicAlt: "16 Brigade Nigerian Army Sports Complex Construction",
   },
+  {
+    kicker: "— STRUCTURAL FABRICATION & METROLOGY",
+    title: "Precision Calibration & ASME Structural Fabrication",
+    desc: "Laboratory-standard ISO/IEC 17025 instrument calibration, ASME Section IX certified pipe spool fabrication, and critical facility upgrades across the Niger Delta.",
+    cta: "GET CONSULTATION",
+    service: "Calibration & Fabrication",
+    bgImage: "/images/construction/fabrication-cutting.jpg",
+    rightGraphic: "/images/construction/rebar-steel-fixing.jpg",
+    graphicAlt: "ASME Welding and Precision Calibration",
+  },
 ];
 
 export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  }, []);
+
+  // Keyboard Navigation: Left (ArrowLeft) and Right (ArrowRight) Arrow Keys
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't intercept when typing in form controls or modals
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        nextSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [prevSlide, nextSlide]);
+
+  // Autoplay Slideshow: automatically transitions every 5.5 seconds, pauses on mouse hover
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5500);
+
+    return () => clearInterval(interval);
+  }, [currentSlide, isPaused, nextSlide]);
 
   // Touch Swipe Gesture Handlers for Mobile Devices
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -86,10 +133,13 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
 
   return (
     <section 
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full min-h-[560px] sm:min-h-[600px] lg:min-h-[660px] bg-slate-900 overflow-hidden select-none"
+      aria-label="Homepage engineering slideshow. Press Left or Right arrow keys to navigate."
+      className="relative w-full min-h-[560px] sm:min-h-[600px] lg:min-h-[660px] bg-slate-900 overflow-hidden select-none outline-none group/hero"
     >
       
       {/* Background Image Layer with Subtle Depth Vignette */}
@@ -127,8 +177,19 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-7 bg-[#eaedf2]/95 backdrop-blur-md p-5 sm:p-8 lg:p-10 rounded-3xl shadow-2xl border border-white/90 max-w-2xl relative"
+            className="lg:col-span-7 bg-[#eaedf2]/95 backdrop-blur-md p-5 sm:p-8 lg:p-10 rounded-3xl shadow-2xl border border-white/90 max-w-2xl relative overflow-hidden"
           >
+            {/* Smooth Autoplay Slide Progress Bar */}
+            <div className="absolute top-0 inset-x-0 h-1 bg-slate-200/90 overflow-hidden">
+              <motion.div
+                key={`progress-${currentSlide}-${isPaused}`}
+                initial={{ width: "0%" }}
+                animate={{ width: isPaused ? "0%" : "100%" }}
+                transition={{ duration: isPaused ? 0 : 5.5, ease: "linear" }}
+                className="h-full bg-gradient-to-r from-mcel-purple via-purple-600 to-amber-500"
+              />
+            </div>
+
             {/* Small Kicker */}
             <p className="text-[11px] sm:text-xs lg:text-[13px] font-bold text-slate-700 tracking-wider uppercase mb-2 sm:mb-3 flex items-center gap-1.5">
               <span>{active.kicker}</span>
@@ -192,20 +253,24 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
 
             </div>
 
-            {/* Mobile Touch Swipe Hint & Slide Dots */}
-            <div className="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between lg:hidden text-[11px] text-slate-500">
-              <span className="text-[10px] font-medium text-slate-400">
-                Swipe left / right to browse
+            {/* Slide Navigation Hints & Interactive Dots */}
+            <div className="mt-5 pt-3.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
+              <span className="text-[10px] sm:text-[11px] font-medium text-slate-500 flex items-center gap-1.5">
+                <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-300 font-mono text-[10px] text-slate-700 shadow-xs">←</kbd>
+                <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-300 font-mono text-[10px] text-slate-700 shadow-xs">→</kbd>
+                <span className="hidden sm:inline">Use arrow keys or swipe</span>
+                <span className="sm:hidden">Swipe or use arrows</span>
               </span>
               <div className="flex items-center space-x-1.5">
                 {slides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentSlide(i)}
-                    className={`h-2 rounded-full transition-all ${
-                      currentSlide === i ? "w-6 bg-mcel-purple" : "w-2 bg-slate-300"
+                    className={`h-2 rounded-full transition-all cursor-pointer ${
+                      currentSlide === i ? "w-7 bg-mcel-purple" : "w-2 bg-slate-300 hover:bg-slate-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
+                    title={`Slide ${i + 1}`}
                   />
                 ))}
               </div>
@@ -245,18 +310,28 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
       </div>
 
       {/* Signature Reference Boxed Slider Controls */}
-      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-10 z-20 flex items-center bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden divide-x divide-slate-200">
+      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-10 z-20 flex items-center bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-slate-200 overflow-hidden divide-x divide-slate-200">
         <button
           onClick={prevSlide}
           className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-slate-700 hover:bg-mcel-purple hover:text-white transition-colors cursor-pointer active:scale-95"
-          aria-label="Previous Slide"
+          aria-label="Previous Slide (← Arrow Key)"
+          title="Previous Slide (← Arrow Key)"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
+
+        {/* Numeric Slide Counter */}
+        <div className="px-3 sm:px-4 flex items-center justify-center text-xs font-bold text-slate-700 font-mono tracking-wider select-none">
+          <span className="text-mcel-purple">{String(currentSlide + 1).padStart(2, "0")}</span>
+          <span className="text-slate-300 mx-1">/</span>
+          <span className="text-slate-400">{String(slides.length).padStart(2, "0")}</span>
+        </div>
+
         <button
           onClick={nextSlide}
           className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-slate-700 hover:bg-mcel-purple hover:text-white transition-colors cursor-pointer active:scale-95"
-          aria-label="Next Slide"
+          aria-label="Next Slide (→ Arrow Key)"
+          title="Next Slide (→ Arrow Key)"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
