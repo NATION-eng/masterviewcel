@@ -312,6 +312,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                   </a>
 
                   <a
+                    href="mailto:info@masterview-eng.com"
+                    className="flex items-center space-x-2.5 text-xs font-medium text-slate-600 hover:text-mcel-purple"
+                  >
+                    <Mail className="w-4 h-4 text-mcel-purple shrink-0" />
+                    <span>info@masterview-eng.com</span>
+                  </a>
+
+                  <a
                     href="mailto:sales@masterview-eng.com"
                     className="flex items-center space-x-2.5 text-xs font-medium text-slate-600 hover:text-mcel-purple"
                   >

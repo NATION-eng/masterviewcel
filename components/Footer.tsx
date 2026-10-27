@@ -96,13 +96,13 @@ export const Footer: React.FC = () => {
               <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <a href="tel:07063836336" className="hover:text-amber-300">07063836336</a>
             </p>
-            <p className="text-xs text-slate-400 flex items-center gap-1.5 mb-1.5">
+            <p className="text-xs text-slate-300 flex items-center gap-1.5 mb-2">
               <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <a href="mailto:sales@masterview-eng.com" className="hover:text-amber-300">sales@masterview-eng.com</a>
+              <a href="mailto:sales@masterview-eng.com" className="hover:text-amber-300 font-medium">sales@masterview-eng.com</a>
             </p>
-            <p className="text-xs text-slate-400 flex items-center gap-1.5">
+            <p className="text-xs text-slate-300 flex items-center gap-1.5">
               <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <a href="mailto:info@masterview-eng.com" className="hover:text-amber-300">info@masterview-eng.com</a>
+              <a href="mailto:info@masterview-eng.com" className="hover:text-amber-300 font-medium">info@masterview-eng.com</a>
             </p>
           </div>
 

@@ -12,15 +12,21 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenRfq }) => {
     <div className="bg-white border-b border-slate-200 text-xs text-slate-600 hidden md:block relative z-30">
       <div className="max-w-7xl mx-auto pl-4 sm:pl-6 lg:pl-8 flex justify-between items-center h-10">
         
-        {/* Left: Address & Email */}
-        <div className="flex items-center space-x-6 text-[11px] font-medium">
-          <div className="flex items-center space-x-1.5 text-slate-500 hover:text-slate-800 transition-colors">
+        {/* Left: Address & Emails */}
+        <div className="flex items-center space-x-5 text-[11px] font-medium">
+          <div className="hidden lg:flex items-center space-x-1.5 text-slate-500 hover:text-slate-800 transition-colors">
             <MapPin className="w-3.5 h-3.5 text-mcel-purple shrink-0" />
-            <span>2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Port Harcourt, Rivers State, Nigeria.</span>
+            <span>2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Port Harcourt</span>
           </div>
-          <div className="flex items-center space-x-1.5 text-slate-500 hover:text-mcel-purple transition-colors">
-            <Mail className="w-3.5 h-3.5 text-mcel-purple shrink-0" />
-            <a href="mailto:sales@masterview-eng.com">sales@masterview-eng.com</a>
+          <div className="flex items-center space-x-3 text-slate-500">
+            <a href="mailto:info@masterview-eng.com" className="hover:text-mcel-purple transition-colors flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5 text-mcel-purple shrink-0" />
+              <span>info@masterview-eng.com</span>
+            </a>
+            <span className="text-slate-300">|</span>
+            <a href="mailto:sales@masterview-eng.com" className="hover:text-mcel-purple transition-colors flex items-center gap-1.5">
+              <span>sales@masterview-eng.com</span>
+            </a>
           </div>
         </div>
 
