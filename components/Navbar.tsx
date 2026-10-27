@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,7 +28,12 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
+  const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Lock body scroll when mobile drawer is open
   useEffect(() => {
@@ -51,8 +57,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           
           {/* Brand Logo & Compact Responsive Name */}
@@ -135,30 +142,37 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
           {/* Mobile Right Controls: Hamburger Button */}
           <div className="flex items-center lg:hidden">
             <button
-              onClick={() => setMobileOpen(true)}
-              className="p-2 rounded-xl text-slate-800 hover:bg-slate-100 active:scale-95 transition-all focus:outline-none"
-              aria-label="Open mobile menu"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileOpen(true);
+              }}
+              className="p-2.5 rounded-xl text-slate-800 hover:text-mcel-purple hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer flex items-center justify-center touch-manipulation"
+              aria-label="Open mobile navigation menu"
+              aria-expanded={mobileOpen}
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-slate-800" />
             </button>
           </div>
 
         </div>
       </div>
+    </header>
 
-      {/* Exceptional Animated Mobile Drawer (Framer Motion) */}
+    {/* Exceptional Animated Mobile Drawer (Portaled to document.body to avoid stacking context issues) */}
+    {mounted && createPortal(
       <AnimatePresence>
         {mobileOpen && (
-          <div className="fixed inset-0 z-50 lg:hidden">
+          <div className="fixed inset-0 z-[9999] lg:hidden">
             
             {/* Backdrop Blur Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
+              className="fixed inset-0 bg-slate-950/75 backdrop-blur-sm"
             />
 
             {/* Slide-Over Drawer Sheet */}
@@ -166,8 +180,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 w-[88vw] max-w-sm bg-white shadow-2xl flex flex-col z-50 overflow-hidden"
+              transition={{ type: "spring", damping: 26, stiffness: 260 }}
+              className="fixed top-0 right-0 bottom-0 w-[88vw] sm:w-[380px] max-w-sm bg-white shadow-2xl flex flex-col z-[10000] overflow-hidden h-[100dvh]"
             >
               {/* Drawer Header */}
               <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 shrink-0">
@@ -349,7 +363,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
             </motion.div>
           </div>
         )}
-      </AnimatePresence>
-    </header>
-  );
+      </AnimatePresence>,
+      document.body
+    )}
+  </>
+);
 };

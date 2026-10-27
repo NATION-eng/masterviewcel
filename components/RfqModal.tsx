@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, Send, MessageSquare, CheckCircle2 } from "lucide-react";
 
 interface RfqModalProps {
@@ -14,6 +15,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   onClose,
   defaultService = "General Inquiry",
 }) => {
+  const [mounted, setMounted] = useState(false);
   const [fullname, setFullname] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +24,11 @@ export const RfqModal: React.FC<RfqModalProps> = ({
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,8 +47,8 @@ export const RfqModal: React.FC<RfqModalProps> = ({
     window.open(`https://wa.me/2349036130587?text=${text}`, "_blank");
   };
 
-  return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+  return createPortal(
+    <div className="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
       <div className="bg-white w-full max-w-xl max-h-[92vh] sm:max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-200">
         
         {/* Modal Header */}
@@ -212,6 +218,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
