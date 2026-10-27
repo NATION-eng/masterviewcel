@@ -97,12 +97,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
               <span>Services</span>
             </Link>
 
-            {/* Dedicated Logistics Link with Special Badge */}
-            <Link href="/logistics" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1.5 font-bold text-slate-900 group">
+            <Link href="/logistics" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
               <span>Logistics Hub</span>
-              <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-400 text-purple-950 font-extrabold uppercase shadow-sm group-hover:bg-amber-300 transition-colors">
-                Special
-              </span>
             </Link>
 
             <Link href="/projects" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
@@ -249,21 +245,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                   <span>8 Core Engineering Pillars</span>
                 </Link>
 
-                {/* Highlighted Logistics Hub */}
                 <Link
                   href="/logistics"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-purple-950 transition-colors font-bold text-sm border border-amber-200/70"
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
                 >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 rounded-lg bg-amber-400 text-purple-950 flex items-center justify-center shrink-0">
-                      <Truck className="w-4 h-4" />
-                    </div>
-                    <span>Logistics & Haulage Hub</span>
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <Truck className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] bg-amber-400 text-purple-950 font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">
-                    Special
-                  </span>
+                  <span>Logistics Hub</span>
                 </Link>
 
                 <Link
