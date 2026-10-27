@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- Energy Drill / Flame Mark -->
+  <g transform="translate(10, 15)">
+    <circle cx="25" cy="25" r="20" fill="#003B46"/>
+    <path d="M25 12 L33 32 L17 32 Z" fill="#F4D03F"/>
+    <circle cx="25" cy="27" r="4" fill="#E74C3C"/>
+  </g>
+  <!-- Text -->
+  <text x="64" y="38" font-family="'Montserrat', sans-serif" font-size="20" font-weight="800" fill="#003B46" letter-spacing="1">LIBROD</text>
+  <text x="65" y="52" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#E74C3C" letter-spacing="1.5">ENERGY SERVICES LTD</text>
+</svg>

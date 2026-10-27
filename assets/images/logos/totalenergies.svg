@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- TotalEnergies Flowing Rings Mark -->
+  <g transform="translate(10, 8)">
+    <path d="M35 12C20 12 12 22 12 34C12 48 24 56 38 56C50 56 58 48 60 38" stroke="#ED1C24" stroke-width="7" stroke-linecap="round"/>
+    <path d="M48 18C56 22 62 30 62 40C62 52 50 62 36 62C22 62 14 52 14 42" stroke="#FF7900" stroke-width="6" stroke-linecap="round"/>
+    <path d="M22 24C28 16 38 14 46 16C54 18 60 26 60 34C60 44 50 50 40 50" stroke="#FFD100" stroke-width="5" stroke-linecap="round"/>
+    <path d="M28 20C34 16 42 16 48 20C54 24 56 30 54 36C52 42 44 46 36 46" stroke="#00A651" stroke-width="5" stroke-linecap="round"/>
+    <path d="M32 26C36 24 42 24 46 28C48 32 46 36 42 38" stroke="#0072CE" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+  <!-- Text Wordmark -->
+  <text x="88" y="47" font-family="'Montserrat', 'Arial', sans-serif" font-size="28" font-weight="700" fill="#1C2541" letter-spacing="-0.5">Total<tspan fill="#ED1C24">Energies</tspan></text>
+</svg>

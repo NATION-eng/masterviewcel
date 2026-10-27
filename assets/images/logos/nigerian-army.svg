@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- Nigerian Army Emblem Insignia -->
+  <g transform="translate(10, 8)">
+    <!-- Eagle at top -->
+    <path d="M30 6 C24 10, 20 12, 14 14 C20 17, 26 16, 30 18 C34 16, 40 17, 46 14 C40 12, 36 10, 30 6 Z" fill="#D32F2F"/>
+    <circle cx="30" cy="11" r="3" fill="#B71C1C"/>
+    <!-- Crossed Swords -->
+    <path d="M12 48 L48 24 M12 24 L48 48" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="12" cy="48" r="2.5" fill="#B8860B"/>
+    <circle cx="48" cy="48" r="2.5" fill="#B8860B"/>
+    <!-- 6-Pointed Star -->
+    <polygon points="30,18 34,26 43,26 36,32 39,41 30,36 21,41 24,32 17,26 26,26" fill="#D32F2F" stroke="#B71C1C" stroke-width="0.8"/>
+    <!-- Golden Base Scroll -->
+    <path d="M10 52 C20 50, 40 50, 50 52 C45 56, 15 56, 10 52 Z" fill="#D4AF37" stroke="#996515" stroke-width="0.8"/>
+    <text x="30" y="55" font-family="'Times New Roman', serif" font-size="5" font-weight="bold" fill="#1B3F20" text-anchor="middle">NASRUN MINALLAH</text>
+  </g>
+  <!-- Text -->
+  <text x="76" y="38" font-family="'Montserrat', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#1B3F20" letter-spacing="1.5">NIGERIAN ARMY</text>
+  <text x="77" y="54" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#B71C1C" letter-spacing="1">DEFENCE INFRASTRUCTURE PARTNER</text>
+</svg>
