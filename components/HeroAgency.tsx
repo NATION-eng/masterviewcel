@@ -19,7 +19,7 @@ const slides = [
     cta: "FREE CONSULTING",
     service: "General Engineering",
     bgImage: "/images/hero-warehouse.jpg",
-    rightGraphic: "/images/hero-plane-globe.jpg",
+    rightGraphic: "/images/construction/engineers-slab-inspection.jpg",
   },
   {
     kicker: "— GLOBAL SUPPLY CHAIN MANAGEMENT",

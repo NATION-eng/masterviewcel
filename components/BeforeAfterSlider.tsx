@@ -1,13 +1,81 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { SlidersHorizontal, CheckCircle2, AlertTriangle } from "lucide-react";
+import { SlidersHorizontal, CheckCircle2, AlertTriangle, Building2 } from "lucide-react";
+
+interface ComparisonCase {
+  id: string;
+  name: string;
+  facility: string;
+  proposalNo: string;
+  existingImg: string;
+  proposedImg: string;
+  existingDesc: string;
+  proposedDesc: string;
+  specs: {
+    label: string;
+    value: string;
+  }[];
+}
+
+const comparisonCases: ComparisonCase[] = [
+  {
+    id: "obite",
+    name: "Obite Gas Plant CCR",
+    facility: "OML 58 Obite Gas Processing Plant • TotalEnergies EP Nigeria",
+    proposalNo: "M-CEL 25/01/TP001",
+    existingImg: "/images/totalenergies/ccr-existing-obite-real.png",
+    proposedImg: "/images/totalenergies/ccr-proposed-obite-3d.png",
+    existingDesc: "Active field survey: congested operator consoles, mismatched screens, legacy wood partitions, and tangled surface wiring.",
+    proposedDesc: "Masterview 3D CAD Modernization: curved multi-operator ergonomic console pods, 5-panel 55” video wall, anti-static raised floor, and branded acoustic wall architecture.",
+    specs: [
+      { label: "Monitoring Architecture", value: "5-Panel 55” Ultra-HD Sony Video Wall" },
+      { label: "Ergonomic Consoles", value: "Curved Multi-Operator Matrix Pods" },
+      { label: "Floor & Cable Tray", value: "60 sqm Anti-Static Raised Steel Floors" },
+      { label: "Access Security", value: "Smart Biometric Facial Recognition" },
+    ],
+  },
+  {
+    id: "obagi",
+    name: "Obagi Flowstation CCR",
+    facility: "OML 58 Obagi Field Flowstation • TotalEnergies EP Nigeria",
+    proposalNo: "M-CEL 25/01/TP002",
+    existingImg: "/images/totalenergies/ccr-existing-obagi-real.png",
+    proposedImg: "/images/totalenergies/ccr-proposed-obagi-3d.png",
+    existingDesc: "Active field survey: outdated desktop monitors, temporary taped panels, exposed telecom wiring, and compromised operator comfort.",
+    proposedDesc: "Masterview 3D CAD Overhaul: centralized process automation displays, recessed touch consoles, ergonomic 24/7 task seating, and redundant climate control.",
+    specs: [
+      { label: "Video Display Wall", value: "Multi-Feed TotalEnergies Process Displays" },
+      { label: "Operator Ergonomics", value: "24/7 Heavy-Duty Lumbar Task Chairs" },
+      { label: "Cable Management", value: "Underfloor Trunking & Isolated Racks" },
+      { label: "HVAC & Lighting", value: "Acoustic Drop Ceiling with Glare-Free LED" },
+    ],
+  },
+];
 
 export const BeforeAfterSlider: React.FC = () => {
+  const [activeCaseIndex, setActiveCaseIndex] = useState(0);
   const [sliderPos, setSliderPos] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState<number>(1000);
   const [isDragging, setIsDragging] = useState(false);
+
+  const activeCase = comparisonCases[activeCaseIndex];
+
+  // Track container width so the clipped left image matches the exact dimensions of the right image
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+      }
+    };
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -31,7 +99,7 @@ export const BeforeAfterSlider: React.FC = () => {
     <div className="w-full bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-800 text-white shadow-2xl">
       
       {/* Header Info */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-slate-800 gap-4">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 pb-6 border-b border-slate-800 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 border border-amber-400/30">
             <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -41,21 +109,47 @@ export const BeforeAfterSlider: React.FC = () => {
             TotalEnergies Central Control Room Upgrade
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm mt-1">
-            Site Investigation & Ergonomic Overhaul • OML 58 (Obagi / Obite) • Technical Proposal No: <span className="font-mono text-amber-400">M-CEL 25/01/TP001</span>
+            Site Investigation & Ergonomic Overhaul • {activeCase.facility} • Proposal:{" "}
+            <span className="font-mono text-amber-400 font-semibold">{activeCase.proposalNo}</span>
           </p>
         </div>
 
-        <div className="flex items-center space-x-3 text-xs shrink-0">
-          <span className="flex items-center gap-1.5 text-rose-400 font-bold bg-rose-950/40 px-3 py-1 rounded-lg border border-rose-900">
-            <AlertTriangle className="w-3.5 h-3.5" /> Existing Site
-          </span>
-          <span className="flex items-center gap-1.5 text-emerald-400 font-bold bg-emerald-950/40 px-3 py-1 rounded-lg border border-emerald-900">
-            <CheckCircle2 className="w-3.5 h-3.5" /> Proposed Overhaul
-          </span>
+        {/* Facility Selector Tabs + Status Badges */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+          {/* Tabs for Obite / Obagi */}
+          <div className="inline-flex p-1 rounded-xl bg-slate-800/80 border border-slate-700">
+            {comparisonCases.map((c, idx) => (
+              <button
+                key={c.id}
+                onClick={() => {
+                  setActiveCaseIndex(idx);
+                  setSliderPos(50);
+                }}
+                className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  activeCaseIndex === idx
+                    ? "bg-mcel-purple text-white shadow-md"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                <Building2 className="w-3.5 h-3.5" />
+                <span>{c.name}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Quick Legend Indicators */}
+          <div className="flex items-center space-x-2 text-xs">
+            <span className="flex items-center gap-1.5 text-rose-400 font-bold bg-rose-950/40 px-2.5 py-1 rounded-lg border border-rose-900">
+              <AlertTriangle className="w-3 h-3" /> Real Site
+            </span>
+            <span className="flex items-center gap-1.5 text-emerald-400 font-bold bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-900">
+              <CheckCircle2 className="w-3 h-3" /> 3D Model
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Interactive Drag Container */}
+      {/* Interactive Drag Comparison Container */}
       <div
         ref={containerRef}
         onMouseDown={() => setIsDragging(true)}
@@ -63,40 +157,43 @@ export const BeforeAfterSlider: React.FC = () => {
         onMouseLeave={() => setIsDragging(false)}
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
-        className="relative w-full h-[320px] sm:h-[480px] lg:h-[540px] rounded-2xl overflow-hidden cursor-ew-resize select-none border-2 border-slate-700 bg-black"
+        className="relative w-full h-[320px] sm:h-[480px] lg:h-[540px] rounded-2xl overflow-hidden cursor-ew-resize select-none border-2 border-slate-700 bg-black shadow-inner"
       >
-        {/* RIGHT IMAGE (Proposed 3D Render) - Full Width Background */}
+        {/* RIGHT IMAGE (Proposed 3D Model Render) - Full Width Background */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/totalenergies/ccr-proposed-main.png"
-            alt="M-CEL Proposed Ergonomic Control Room"
+            src={activeCase.proposedImg}
+            alt="M-CEL Proposed Ergonomic Control Room 3D Model"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-emerald-600/90 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center gap-2">
+          <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-emerald-600/90 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center gap-2 border border-emerald-400/40">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span>Proposed 3D Modernization</span>
+            <span>Proposed 3D Model (M-CEL Render)</span>
           </div>
         </div>
 
-        {/* LEFT IMAGE (Existing Dilapidated Site Photo) - Clipped by Slider */}
+        {/* LEFT IMAGE (Existing Real Field Survey Photo) - Clipped by Slider Position */}
         <div
           style={{ width: `${sliderPos}%` }}
-          className="absolute inset-y-0 left-0 overflow-hidden border-r-2 border-amber-400"
+          className="absolute inset-y-0 left-0 overflow-hidden border-r-2 border-amber-400 z-10 shadow-[4px_0_15px_rgba(0,0,0,0.5)]"
         >
-          <div className="relative w-full h-full min-w-[320px] sm:min-w-[700px] lg:min-w-[1000px]">
+          <div
+            style={{ width: containerWidth ? `${containerWidth}px` : "100%", height: "100%" }}
+            className="relative"
+          >
             <Image
-              src="/images/totalenergies/ccr-existing-main.png"
-              alt="Existing OML 58 Control Room Site Survey"
+              src={activeCase.existingImg}
+              alt="Existing Control Room Real Field Survey Photo"
               fill
-              className="object-cover object-left"
+              className="object-cover object-center"
               priority
             />
           </div>
           <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-slate-900/90 text-rose-300 font-bold text-xs uppercase tracking-wider backdrop-blur-md shadow-lg border border-rose-900 flex items-center gap-2">
             <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-            <span>Existing Site Survey</span>
+            <span>Existing Active Site (Real Survey Photo)</span>
           </div>
         </div>
 
@@ -105,31 +202,37 @@ export const BeforeAfterSlider: React.FC = () => {
           style={{ left: `${sliderPos}%` }}
           className="absolute inset-y-0 -ml-5 w-10 flex items-center justify-center pointer-events-none z-20"
         >
-          <div className="w-10 h-10 rounded-full bg-amber-400 text-purple-950 flex items-center justify-center shadow-2xl border-2 border-white font-bold">
+          <div className="w-10 h-10 rounded-full bg-amber-400 text-purple-950 flex items-center justify-center shadow-2xl border-2 border-white font-bold transition-transform hover:scale-110">
             <SlidersHorizontal className="w-5 h-5" />
           </div>
         </div>
 
       </div>
 
+      {/* Comparison Descriptions */}
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div className="p-3 rounded-xl bg-slate-800/40 border border-slate-800">
+          <span className="text-rose-400 font-bold uppercase tracking-wider block mb-1">
+            Current Operational Constraints
+          </span>
+          <p className="text-slate-300 leading-relaxed">{activeCase.existingDesc}</p>
+        </div>
+        <div className="p-3 rounded-xl bg-slate-800/40 border border-slate-800">
+          <span className="text-emerald-400 font-bold uppercase tracking-wider block mb-1">
+            M-CEL Proposed Engineering Solution
+          </span>
+          <p className="text-slate-300 leading-relaxed">{activeCase.proposedDesc}</p>
+        </div>
+      </div>
+
       {/* Engineering Improvement Specifications Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-800 text-xs">
-        <div className="p-3 rounded-xl bg-slate-800/50">
-          <span className="text-slate-400 block font-medium">Monitoring Architecture</span>
-          <strong className="text-white text-sm">5-Panel 55” Ultra-HD Sony Video Wall</strong>
-        </div>
-        <div className="p-3 rounded-xl bg-slate-800/50">
-          <span className="text-slate-400 block font-medium">Ergonomic Consoles</span>
-          <strong className="text-white text-sm">Curved Multi-Operator Matrix Pods</strong>
-        </div>
-        <div className="p-3 rounded-xl bg-slate-800/50">
-          <span className="text-slate-400 block font-medium">Cable Infrastructure</span>
-          <strong className="text-white text-sm">60 sqm Anti-Static Raised Steel Floors</strong>
-        </div>
-        <div className="p-3 rounded-xl bg-slate-800/50">
-          <span className="text-slate-400 block font-medium">Access Security</span>
-          <strong className="text-white text-sm">Smart Biometric Facial Recognition</strong>
-        </div>
+        {activeCase.specs.map((s, idx) => (
+          <div key={idx} className="p-3 rounded-xl bg-slate-800/60 border border-slate-800">
+            <span className="text-slate-400 block font-medium mb-0.5">{s.label}</span>
+            <strong className="text-white text-xs sm:text-sm font-semibold">{s.value}</strong>
+          </div>
+        ))}
       </div>
 
     </div>
