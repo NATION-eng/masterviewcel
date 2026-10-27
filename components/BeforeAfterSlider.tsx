@@ -175,8 +175,8 @@ export const BeforeAfterSlider: React.FC = () => {
             className="object-cover object-center"
             priority
           />
-          {/* Staggered on Mobile: Bottom-Right on mobile to never collide with top-left badge! */}
-          <div className="absolute bottom-3 right-3 sm:top-4 sm:right-4 z-10 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-emerald-600/95 text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
+          {/* Top-Right Badge: Fixed compact badge with no vertical stretch */}
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 px-3 py-1.5 rounded-full bg-emerald-600/95 text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center gap-1.5 border border-emerald-400/40 pointer-events-none whitespace-nowrap">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span>Proposed 3D Model</span>
           </div>
@@ -200,7 +200,7 @@ export const BeforeAfterSlider: React.FC = () => {
             />
           </div>
           {/* Top-Left Badge */}
-          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-900/90 text-rose-300 font-bold text-[10px] sm:text-xs uppercase tracking-wider backdrop-blur-md shadow-lg border border-rose-900 flex items-center gap-1.5">
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 px-3 py-1.5 rounded-full bg-slate-900/90 text-rose-300 font-bold text-[10px] sm:text-xs uppercase tracking-wider backdrop-blur-md shadow-lg border border-rose-900 flex items-center gap-1.5 pointer-events-none whitespace-nowrap">
             <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
             <span>Active Site Survey</span>
           </div>
