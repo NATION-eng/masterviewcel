@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Search, 
@@ -27,7 +28,18 @@ interface NavbarProps {
   onOpenSearch?: () => void;
 }
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#services", label: "Services" },
+  { href: "/logistics", label: "Logistics Hub" },
+  { href: "/projects", label: "Projects" },
+  { href: "/#hse", label: "Quality & HSE" },
+  { href: "/contact", label: "Contact" },
+];
+
 export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -84,34 +96,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
           </Link>
 
           {/* Desktop Navigation Menu */}
-          <nav className="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
-            <Link href="/" className="hover:text-mcel-purple text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Home</span>
-            </Link>
-            
-            <Link href="/#about" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>About Us</span>
-            </Link>
-
-            <Link href="/#services" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Services</span>
-            </Link>
-
-            <Link href="/logistics" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Logistics Hub</span>
-            </Link>
-
-            <Link href="/projects" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Projects</span>
-            </Link>
-
-            <Link href="/#hse" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Quality & HSE</span>
-            </Link>
-
-            <Link href="/contact" className="hover:text-mcel-purple transition-colors py-2 flex items-center gap-1">
-              <span>Contact</span>
-            </Link>
+          <nav className="hidden lg:flex items-center space-x-7 text-sm font-semibold">
+            {navLinks.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative py-2 flex items-center gap-1 transition-colors duration-200 group ${
+                    isActive
+                      ? "text-mcel-purple after:w-full font-bold"
+                      : "text-slate-700 hover:text-mcel-purple after:w-0 hover:after:w-full"
+                  } after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:bg-mcel-purple after:rounded-full after:transition-all after:duration-300 after:ease-out`}
+                >
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Right Action Controls */}
