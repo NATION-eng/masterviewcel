@@ -59,14 +59,14 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-preview.jpg",
+        url: "/images/og-preview.jpg?v=2",
         width: 1200,
         height: 630,
         alt: "Masterview Consults Engineering Limited - Engineering Solutions For All Enterprises",
         type: "image/jpeg",
       },
       {
-        url: "/images/og-preview.png",
+        url: "/images/og-preview.png?v=2",
         width: 1200,
         height: 630,
         alt: "Masterview Consults Engineering Limited Preview Card",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Masterview Consults Engineering Limited (M-CEL)",
     description:
       "Delivering engineering precision, ISO/IEC 17025 calibration, oil & gas maintenance, and turnkey civil infrastructure across Nigeria. RC: 7361706.",
-    images: ["/images/og-preview.jpg"],
+    images: ["/images/og-preview.jpg?v=2"],
     creator: "@masterviewcel",
   },
 };
@@ -96,7 +96,7 @@ export default function RootLayout({
     alternateName: ["M-CEL", "Masterview Consults", "Masterview Engineering"],
     url: "https://masterviewcel.vercel.app",
     logo: "https://masterviewcel.vercel.app/images/m-cel-logo.jpg",
-    image: "https://masterviewcel.vercel.app/images/og-preview.jpg",
+    image: "https://masterviewcel.vercel.app/images/og-preview.jpg?v=2",
     description:
       "Masterview Consults Engineering Limited (M-CEL) is a premier indigenous Nigerian engineering powerhouse based in Port Harcourt (RC: 7361706). We deliver ISO/IEC 17025 precision calibration, API-standard oil & gas maintenance, turnkey civil & defense infrastructure, ASME structural fabrication, and nationwide heavy haulage supply chain logistics.",
     identifier: "RC: 7361706",
