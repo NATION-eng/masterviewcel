@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play, ChevronLeft, ChevronRight, HardHat } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, HardHat } from "lucide-react";
 
 interface HeroAgencyProps {
   onOpenRfq: () => void;
@@ -177,18 +177,18 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
                 </span>
               </button>
 
-              {/* Video Play Trigger */}
-              <button
-                onClick={onOpenVideo || onOpenRfq}
+              {/* Explore Capabilities Trigger */}
+              <a
+                href="#services"
                 className="inline-flex items-center justify-center space-x-3 text-slate-800 hover:text-mcel-purple font-semibold text-xs sm:text-sm transition-colors group cursor-pointer py-2 sm:py-0"
               >
-                <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white shadow-md flex items-center justify-center border border-slate-200 group-hover:scale-105 transition-transform shrink-0">
-                  <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-mcel-purple fill-mcel-purple ml-0.5" />
+                <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white shadow-md flex items-center justify-center border border-slate-200 group-hover:scale-105 group-hover:border-mcel-purple/30 transition-all shrink-0">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-mcel-purple transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="underline decoration-slate-300 underline-offset-4 group-hover:decoration-mcel-purple font-bold">
                   Explore Capabilities
                 </span>
-              </button>
+              </a>
 
             </div>
 
