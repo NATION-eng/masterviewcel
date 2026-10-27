@@ -130,23 +130,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
             >
               <LayoutGrid className="w-4 h-4" />
             </button>
-
-            <button
-              onClick={onOpenRfq}
-              className="px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-mcel-purple hover:bg-mcel-purpleLight transition-all shadow-sm active:scale-95 cursor-pointer"
-            >
-              Request Quote
-            </button>
           </div>
 
-          {/* Mobile Right Controls: Quote Pill + Hamburger Button */}
-          <div className="flex items-center space-x-2 lg:hidden">
-            <button
-              onClick={onOpenRfq}
-              className="px-3 py-1.5 rounded-full bg-mcel-purple hover:bg-mcel-purpleLight text-white text-[11px] font-bold tracking-wide shadow-sm active:scale-95 cursor-pointer"
-            >
-              Quote
-            </button>
+          {/* Mobile Right Controls: Hamburger Button */}
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setMobileOpen(true)}
               className="p-2 rounded-xl text-slate-800 hover:bg-slate-100 active:scale-95 transition-all focus:outline-none"
@@ -350,7 +337,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                   }}
                   className="w-full py-3 rounded-xl bg-mcel-purple hover:bg-mcel-purpleLight text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer"
                 >
-                  <span>Request Engineering Quote</span>
+                  <span>Get Consultation</span>
                   <ArrowRight className="w-4 h-4 text-amber-400" />
                 </button>
 

@@ -51,7 +51,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
             <span className="text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-widest block">
               Tender & Consultation Desk
             </span>
-            <h3 className="text-lg sm:text-xl font-bold font-heading">Request an Engineering RFQ</h3>
+            <h3 className="text-lg sm:text-xl font-bold font-heading">Request an Engineering Consultation</h3>
           </div>
           <button
             onClick={onClose}
@@ -195,7 +195,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
                   className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-mcel-purple hover:bg-mcel-purpleLight text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer active:scale-95"
                 >
                   <Send className="w-4 h-4 text-amber-400" />
-                  <span>Submit RFP / RFQ</span>
+                  <span>Submit Consultation Request</span>
                 </button>
 
                 <button

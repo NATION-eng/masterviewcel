@@ -42,7 +42,7 @@ export const MobileActionBar: React.FC<MobileActionBarProps> = ({ onOpenRfq }) =
           <span className="text-[10px] font-bold tracking-tight">Logistics</span>
         </Link>
 
-        {/* 4. Request Quote */}
+        {/* 4. Get Consultation */}
         <button
           onClick={onOpenRfq}
           className="flex flex-col items-center justify-center h-full text-slate-600 hover:text-mcel-purple active:scale-95 transition-all cursor-pointer"
@@ -50,7 +50,7 @@ export const MobileActionBar: React.FC<MobileActionBarProps> = ({ onOpenRfq }) =
           <div className="w-7 h-7 rounded-full bg-mcel-purple text-white flex items-center justify-center mb-0.5 shadow-sm">
             <FileText className="w-3.5 h-3.5 text-amber-400" />
           </div>
-          <span className="text-[10px] font-bold text-mcel-purple tracking-tight">RFQ</span>
+          <span className="text-[10px] font-bold text-mcel-purple tracking-tight">Consult</span>
         </button>
 
       </div>

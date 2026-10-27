@@ -26,7 +26,7 @@ The official web platform for **Masterview Consults Engineering Limited (M-CEL)*
 ## 🚀 Key Architectural Features
 
 1. **Human Agency-Grade UI/UX:**
-   * 1:1 replication of the reference design benchmark with signature slanted purple notch (`GET CONSULTING`) on the top bar.
+   * 1:1 replication of the reference design benchmark with signature slanted purple notch (`GET CONSULTATION`) on the top bar.
    * Asymmetrical layered hero composition with warehouse background, 3D multimodal transport render, pill CTA, and boxed slider controls.
 2. **Dedicated Logistics & Supply Chain Hub (`/logistics`):**
    * Features the 4 designated photos for SAP inventory management, port container haulage, last-mile delivery, and global freight.

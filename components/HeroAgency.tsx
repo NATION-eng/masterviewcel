@@ -15,7 +15,7 @@ const slides = [
     kicker: "— INTEGRATED ENGINEERING & ENERGY",
     title: "Engineering Solutions For All Enterprises",
     desc: "Masterview Consults Engineering Limited delivers world-standard oil & gas maintenance, precision calibration (ISO/IEC 17025), heavy structural fabrication, and turnkey contracting across Nigeria.",
-    cta: "FREE CONSULTING",
+    cta: "GET CONSULTATION",
     service: "General Engineering",
     bgImage: "/images/hero-warehouse.jpg",
     rightGraphic: "/images/construction/engineers-slab-inspection.jpg",

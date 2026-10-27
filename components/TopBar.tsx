@@ -43,7 +43,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenRfq }) => {
             className="polygon-notch bg-mcel-purple hover:bg-mcel-purpleLight text-white font-extrabold text-[11px] uppercase tracking-wider px-8 h-full flex items-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer"
           >
             <CalendarCheck className="w-3.5 h-3.5 text-amber-400" />
-            <span>GET CONSULTING</span>
+            <span>GET CONSULTATION</span>
           </button>
         </div>
 
