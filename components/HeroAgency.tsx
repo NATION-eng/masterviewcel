@@ -240,10 +240,12 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
             {/* Slide Navigation Hints & Interactive Dots */}
             <div className="mt-5 sm:mt-8 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-slate-300 max-w-xl">
               <span className="text-[11px] sm:text-xs font-medium text-slate-300 flex items-center gap-1.5">
-                <kbd className="px-1.5 py-0.5 rounded bg-white/20 border border-white/30 font-mono text-[10px] text-white shadow-xs">←</kbd>
-                <kbd className="px-1.5 py-0.5 rounded bg-white/20 border border-white/30 font-mono text-[10px] text-white shadow-xs">→</kbd>
-                <span className="hidden sm:inline">Use arrow keys or swipe</span>
-                <span className="sm:hidden">Swipe or use arrows</span>
+                <span className="hidden sm:inline-flex items-center gap-1.5">
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/20 border border-white/30 font-mono text-[10px] text-white shadow-xs">←</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/20 border border-white/30 font-mono text-[10px] text-white shadow-xs">→</kbd>
+                  <span>Use arrow keys</span>
+                </span>
+                <span className="sm:hidden text-[10px] text-slate-400">Swipe to browse slides</span>
               </span>
               <div className="flex items-center space-x-2">
                 {slides.map((slide, i) => (
@@ -268,8 +270,8 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
 
       </div>
 
-      {/* Signature Reference Boxed Slider Controls */}
-      <div className="absolute bottom-5 right-5 sm:bottom-8 sm:right-12 z-20 flex items-center bg-slate-900/85 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 overflow-hidden divide-x divide-white/20 text-white">
+      {/* Signature Reference Boxed Slider Controls (Hidden on mobile phones, visible on desktop/tablet) */}
+      <div className="hidden sm:flex absolute bottom-5 right-5 sm:bottom-8 sm:right-12 z-20 items-center bg-slate-900/85 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 overflow-hidden divide-x divide-white/20 text-white">
         <button
           onClick={prevSlide}
           className="w-11 h-11 sm:w-13 sm:h-13 flex items-center justify-center hover:bg-mcel-purple hover:text-white transition-colors cursor-pointer active:scale-95"
