@@ -299,6 +299,7 @@ const organogramData = {
 };
 
 export const OrganogramSection: React.FC = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState<"all" | "projects" | "corporate">("all");
   const [selectedNode, setSelectedNode] = useState<NodeData | null>(null);
   const [expandedNodes, setExpandedNodes] = useState<Record<string, boolean>>({
@@ -310,64 +311,149 @@ export const OrganogramSection: React.FC = () => {
     "account-admin-lead": true,
   });
 
+  // Auto-expand if user navigates to #organogram
+  React.useEffect(() => {
+    const checkHash = () => {
+      if (typeof window !== "undefined" && window.location.hash === "#organogram") {
+        setIsExpanded(true);
+      }
+    };
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
+    return () => window.removeEventListener("hashchange", checkHash);
+  }, []);
+
   const toggleExpand = (id: string) => {
     setExpandedNodes((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   return (
-    <section id="organogram" className="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200 overflow-hidden">
+    <section id="organogram" className="py-12 sm:py-16 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-mcel-purple text-xs font-extrabold tracking-wider uppercase mb-3 shadow-xs">
-            <GitBranch className="w-3.5 h-3.5 text-amber-500" />
-            <span>Corporate Governance & Structure</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading tracking-tight">
-            Organizational Structure (Organogram)
-          </h2>
-          <p className="text-slate-600 text-xs sm:text-sm md:text-base mt-3 leading-relaxed">
-            Our streamlined corporate hierarchy defines accountability, operational safety, and clear reporting lines from the Board of Directors down to specialized field project teams.
-          </p>
+        {/* COMPACT ENTERPRISE GOVERNANCE CARD (Always visible & commercial) */}
+        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 sm:p-8 lg:p-10 relative">
+          
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
+            
+            <div className="max-w-2xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-mcel-purple text-xs font-extrabold tracking-wider uppercase">
+                <GitBranch className="w-3.5 h-3.5 text-amber-500" />
+                <span>Institutional Governance & Structure</span>
+              </div>
 
-          {/* Division Filter Pills */}
-          <div className="mt-6 inline-flex p-1 rounded-2xl bg-slate-200/80 border border-slate-300/80 max-w-full overflow-x-auto">
-            <button
-              onClick={() => setActiveTab("all")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
-                activeTab === "all"
-                  ? "bg-mcel-purple text-white shadow-sm"
-                  : "text-slate-700 hover:text-slate-900"
-              }`}
-            >
-              Complete Organogram
-            </button>
-            <button
-              onClick={() => setActiveTab("projects")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
-                activeTab === "projects"
-                  ? "bg-mcel-purple text-white shadow-sm"
-                  : "text-slate-700 hover:text-slate-900"
-              }`}
-            >
-              Projects, OH&S & Marine
-            </button>
-            <button
-              onClick={() => setActiveTab("corporate")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
-                activeTab === "corporate"
-                  ? "bg-mcel-purple text-white shadow-sm"
-                  : "text-slate-700 hover:text-slate-900"
-              }`}
-            >
-              HR, Finance & Bus Dev
-            </button>
-          </div>
-        </div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 font-heading">
+                Corporate Governance & Organizational Structure
+              </h2>
 
-        {/* ORGANOGRAM DESKTOP HIERARCHICAL CHART (Visible on lg and above) */}
-        <div className="hidden lg:block">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Masterview Consults operates under an audited, structured corporate organogram ensuring transparency and zero operational compromise—delineating fiduciary oversight from the Board of Directors & Managing Director down to independent OH&S/Medic, Environmental (UK IOM Partner), Marine, and Corporate Business divisions.
+              </p>
+
+              {/* Hierarchy Badges */}
+              <div className="pt-1 flex flex-wrap items-center gap-1.5 text-[11px] font-medium text-slate-700">
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1 font-bold">
+                  <ShieldCheck className="w-3.5 h-3.5 text-red-500" /> Board of Directors
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1 font-bold">
+                  <UserCheck className="w-3.5 h-3.5 text-cyan-600" /> Managing Director (CEO)
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1">
+                  <HardHat className="w-3.5 h-3.5 text-amber-500" /> Head, Projects
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1">
+                  <HeartPulse className="w-3.5 h-3.5 text-rose-500" /> Head, OH&S/Medic
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1">
+                  <FlaskConical className="w-3.5 h-3.5 text-purple-600" /> IH Lab Partner (IOM UK)
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center gap-1">
+                  <Users className="w-3.5 h-3.5 text-blue-600" /> Head, HR / Business Processes
+                </span>
+              </div>
+            </div>
+
+            {/* Toggle Button Area */}
+            <div className="shrink-0 w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-3">
+              <button
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-mcel-purple hover:bg-mcel-purpleLight text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 cursor-pointer"
+              >
+                <GitBranch className="w-4 h-4 text-amber-400" />
+                <span>{isExpanded ? "Collapse Organogram" : "Explore Interactive Organogram"}</span>
+                {isExpanded ? (
+                  <ChevronUp className="w-4 h-4 text-amber-400" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-amber-400" />
+                )}
+              </button>
+
+              <div className="flex items-center justify-center lg:justify-start gap-1.5 text-[11px] text-slate-500 font-mono text-center">
+                <span>RC: 3684306</span>
+                <span>•</span>
+                <span>Audit & Tender Ready</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* EXPANDABLE FULL ORGANOGRAM TREE (Unfolds smoothly when requested) */}
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="pt-8 sm:pt-12 border-t border-slate-200 mt-8"
+              >
+                
+                {/* Organogram Sub-Header & Controls */}
+                <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
+                    Full Reporting Hierarchy & Departmental Breakdown
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Click any node or department box below to inspect its operational scope, key deliverables, and safety standards.
+                  </p>
+
+                  {/* Division Filter Pills */}
+                  <div className="mt-4 inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200 max-w-full overflow-x-auto">
+                    <button
+                      onClick={() => setActiveTab("all")}
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                        activeTab === "all"
+                          ? "bg-mcel-purple text-white shadow-xs"
+                          : "text-slate-600 hover:text-slate-900"
+                      }`}
+                    >
+                      Complete Organogram
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("projects")}
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                        activeTab === "projects"
+                          ? "bg-mcel-purple text-white shadow-xs"
+                          : "text-slate-600 hover:text-slate-900"
+                      }`}
+                    >
+                      Projects, OH&S & Marine
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("corporate")}
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                        activeTab === "corporate"
+                          ? "bg-mcel-purple text-white shadow-xs"
+                          : "text-slate-600 hover:text-slate-900"
+                      }`}
+                    >
+                      HR, Finance & Bus Dev
+                    </button>
+                  </div>
+                </div>
+
+                {/* ORGANOGRAM DESKTOP HIERARCHICAL CHART (Visible on lg and above) */}
+                <div className="hidden lg:block">
           
           {/* TIER 1: Board of Directors */}
           <div className="flex flex-col items-center">
@@ -837,6 +923,23 @@ export const OrganogramSection: React.FC = () => {
           </div>
 
         </div>
+
+          {/* Bottom Collapse Button */}
+          <div className="mt-8 pt-6 border-t border-slate-100 text-center">
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer active:scale-95"
+            >
+              <ChevronUp className="w-4 h-4 text-mcel-purple" />
+              <span>Collapse Organogram</span>
+            </button>
+          </div>
+
+        </motion.div>
+      )}
+    </AnimatePresence>
+
+  </div>
 
         {/* ORGANOGRAM TRUST STRIP FOOTNOTE */}
         <div className="mt-12 p-4 sm:p-5 rounded-2xl bg-slate-100 border border-slate-300/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600 text-center sm:text-left">
