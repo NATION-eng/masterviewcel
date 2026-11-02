@@ -13,6 +13,8 @@ const armyPhotos = [
   { src: "/images/army/army-finished-5-clubhouse.jpg", caption: "Recreation clubhouse lounge with stone-coated tile roofing & water tower" },
   { src: "/images/army/army-finished-6-walkway.jpg", caption: "Perimeter security chain-link fence, curbed landscaping bed & corridor to pavilion" },
   { src: "/images/army/army-finished-7-paved-perimeter.jpg", caption: "Sheltered grandstand pavilion flank, landscaped curbs & synthetic pitch boundary" },
+  { src: "/images/army/army-finished-8-walkway-canopy.jpg", caption: "Perimeter walkway corridor along lawn curb and security netting to grandstand canopy" },
+  { src: "/images/army/army-finished-9-landscaped-garden.jpg", caption: "Curbed ornamental landscaping garden bed with young palms alongside pitch enclosure" },
 ];
 
 export const ProjectSpotlight: React.FC = () => {
@@ -84,7 +86,7 @@ export const ProjectSpotlight: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-emerald-500/30 mb-3">
                 <Camera className="w-3.5 h-3.5 text-amber-400" />
-                <span>7 Finished Complex Field Photos</span>
+                <span>9 Finished Complex Field Photos</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white leading-tight">

@@ -58,6 +58,16 @@ const armyGallery = [
     title: "Grandstand Pavilion Flank & Pitch Perimeter",
     desc: "View along the spectator grandstand terracing, cantilever weather canopy, landscaped perimeter curb, and FIFA-spec turf enclosure."
   },
+  {
+    src: "/images/army/army-finished-8-walkway-canopy.jpg",
+    title: "Spectator Access Walkway & Grandstand Flank",
+    desc: "Perimeter walkway corridor along the landscaped garden curb and high-tensile green security chain-link fence, showcasing the grandstand pavilion cantilever canopy."
+  },
+  {
+    src: "/images/army/army-finished-9-landscaped-garden.jpg",
+    title: "Curbed Landscaping Garden Island & Clubhouse View",
+    desc: "Longitudinal perspective of the curbed ornamental planting bed with young palms, running alongside the pitch chain-link enclosure towards the clubhouse."
+  },
 ];
 
 const nlngGallery = [
@@ -384,7 +394,7 @@ const corporateContracts: ContractProject[] = [
     category: "Civil & Structural",
     tags: ["Synthetic Turf Pitch", "Cantilever Grandstand", "Clubhouse Construction", "Perimeter Fencing", "Civil Delivery"],
     jumpLink: "#army-complex-section",
-    jumpText: "View 7 Finished Complex Field Photos"
+    jumpText: "View 9 Finished Complex Field Photos"
   },
   {
     id: "nlng-felting",
@@ -869,7 +879,7 @@ export default function ProjectsPage() {
 
             <div className="max-w-3xl mb-8 sm:mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold tracking-wider uppercase mb-2.5">
-                <Camera className="w-3.5 h-3.5" /> Case Study: Nigerian Army 16 Brigade • 7 Completed Photos
+                <Camera className="w-3.5 h-3.5" /> Case Study: Nigerian Army 16 Brigade • 9 Completed Photos
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
                 Military Recreation & Sports Complex, Yenagoa
