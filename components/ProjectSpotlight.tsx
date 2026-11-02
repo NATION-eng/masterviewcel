@@ -91,13 +91,18 @@ export const ProjectSpotlight: React.FC = () => {
                 Military Recreation & Sports Complex
               </h3>
 
-              <div className="space-y-1 text-xs mt-2">
-                <p className="text-amber-400 font-bold uppercase tracking-wider">
-                  Client: Nigerian Army (16 Brigade)
-                </p>
-                <p className="text-slate-300">
-                  Location: 16 Brigade Headquarters, Yenagoa, Bayelsa State
-                </p>
+              <div className="flex items-center gap-3 mt-3 mb-2">
+                <div className="relative w-12 h-10 bg-white rounded-lg p-1 shrink-0 shadow-sm border border-slate-700">
+                  <Image src="/images/logos/nigerian-army.png" alt="Nigerian Army Logo" fill className="object-contain" />
+                </div>
+                <div className="space-y-0.5 text-xs">
+                  <p className="text-amber-400 font-bold uppercase tracking-wider">
+                    Client: Nigerian Army (16 Brigade)
+                  </p>
+                  <p className="text-slate-300">
+                    Location: 16 Brigade Headquarters, Yenagoa, Bayelsa State
+                  </p>
+                </div>
               </div>
 
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mt-3">
@@ -168,7 +173,7 @@ export const ProjectSpotlight: React.FC = () => {
             <div>
               <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 bg-slate-900">
                 <Image
-                  src="/images/construction/tower-crane-sunset.jpg"
+                  src="/images/horandez/horandez-2-portal-frame.jpg"
                   alt="40m x 40m Steel Warehouse"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -176,22 +181,30 @@ export const ProjectSpotlight: React.FC = () => {
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-mcel-purple text-white text-[10px] font-bold uppercase tracking-wider shadow">
                   Civil & Steel Fabrication
                 </span>
+                <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-amber-300 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 border border-white/10">
+                  <Camera className="w-3 h-3" /> 9 Field Photos
+                </span>
+              </div>
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="relative w-9 h-7 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+                  <Image src="/images/logos/horandez-detroit.png" alt="Horandez & Detroit Logo" fill className="object-contain" />
+                </div>
+                <p className="text-xs text-amber-600 font-bold uppercase">
+                  Horandez & Detroit Company Ltd • Iriebe
+                </p>
               </div>
               <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
                 40m × 40m Heavy Steel Warehouse & Offices
               </h4>
-              <p className="text-xs text-amber-600 font-bold uppercase mb-2.5">
-                Client: Horandez & Detroit Company Ltd • Iriebe, Rivers State
-              </p>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                 Civil engineering design, foundation slab construction, and 1,600 sqm clear-span structural steel warehouse erection with an adjoining multi-storey engineering office facility.
               </p>
             </div>
             <Link
-              href="/projects"
+              href="/projects#horandez-warehouse"
               className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
             >
-              <span>Explore Technical Scope</span>
+              <span>Explore Verified Field Photos (9)</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -213,12 +226,17 @@ export const ProjectSpotlight: React.FC = () => {
                   <Camera className="w-3 h-3" /> Field Case Study
                 </span>
               </div>
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="relative w-9 h-7 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+                  <Image src="/images/logos/nlng.png" alt="NLNG Logo" fill className="object-contain" />
+                </div>
+                <p className="text-xs text-emerald-700 font-bold uppercase">
+                  Nigeria LNG Limited (NLNG) • Bonny Island
+                </p>
+              </div>
               <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
                 30m × 6.3m Roof Bitumen Re-Felting & Waterproofing
               </h4>
-              <p className="text-xs text-amber-600 font-bold uppercase mb-2.5">
-                Client: Nigeria LNG Limited (NLNG) • Finima, Bonny Island
-              </p>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                 Substrate leveling, sandcrete screed laid to fall, 500mm × 500mm foam glass thermal insulation, and 10mm heavy-duty bitumen felt re-felting across 30m × 6.3m roof expanse under strict NLNG island PTW protocols.
               </p>
