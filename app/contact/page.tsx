@@ -83,6 +83,19 @@ export default function ContactPage() {
                   <p className="text-slate-600 text-xs sm:text-sm">
                     Operating centrally from Port Harcourt, Rivers State, serving clients nationwide.
                   </p>
+                  <div className="flex flex-wrap items-center gap-2 mt-2.5 font-mono text-[11px]">
+                    <a
+                      href="/images/cac-certificate.jpg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Official CAC Registration Certificate"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-bold transition-colors"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5 text-amber-600" /> CAC BN: 3684306
+                    </a>
+                    <span className="text-slate-300">•</span>
+                    <span className="text-slate-500">TIN: 31664498-0001</span>
+                  </div>
                 </div>
 
                 <div className="space-y-3 sm:space-y-4">

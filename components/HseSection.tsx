@@ -71,7 +71,7 @@ export const HseSection: React.FC = () => {
                 NSE Reg: 66878
               </span>
               <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-amber-300 text-[11px] sm:text-xs font-mono border border-slate-700">
-                CAC RC: 7361706
+                CAC BN: 3684306
               </span>
             </div>
           </div>

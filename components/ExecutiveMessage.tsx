@@ -48,14 +48,22 @@ export const ExecutiveMessage: React.FC = () => {
             </div>
 
             {/* Floating Trust Indicator (Desktop & Tablet) */}
-            <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block max-w-[210px] z-10">
+            <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block max-w-[220px] z-10">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl bg-amber-400 text-purple-950 flex items-center justify-center font-extrabold text-xl shadow-inner shrink-0">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-900 uppercase">CAC Certified</p>
-                  <p className="text-[11px] text-slate-500">RC: 7361706 Active</p>
+                  <p className="text-[11px] text-slate-500 font-mono">BN: 3684306</p>
+                  <a
+                    href="/images/cac-certificate.jpg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] text-mcel-purple hover:underline font-bold inline-flex items-center gap-0.5 mt-0.5"
+                  >
+                    View Certificate &rarr;
+                  </a>
                 </div>
               </div>
             </div>
@@ -67,13 +75,18 @@ export const ExecutiveMessage: React.FC = () => {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-900 block leading-tight">CAC RC: 7361706</span>
-                  <span className="text-[10px] text-slate-500">Registered Nigerian Corporation</span>
+                  <span className="text-xs font-bold text-slate-900 block leading-tight font-mono">CAC BN: 3684306</span>
+                  <span className="text-[10px] text-slate-500">Registered Business Name</span>
                 </div>
               </div>
-              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
-                Verified Active
-              </span>
+              <a
+                href="/images/cac-certificate.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-bold text-mcel-purple bg-purple-50 hover:bg-purple-100 border border-purple-200 px-2 py-1 rounded"
+              >
+                Certificate
+              </a>
             </div>
 
           </div>

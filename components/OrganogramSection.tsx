@@ -389,7 +389,7 @@ export const OrganogramSection: React.FC = () => {
               </button>
 
               <div className="flex items-center justify-center lg:justify-start gap-1.5 text-[11px] text-slate-500 font-mono text-center">
-                <span>RC: 3684306</span>
+                <span>CAC BN: 3684306</span>
                 <span>•</span>
                 <span>Audit & Tender Ready</span>
               </div>
@@ -948,7 +948,7 @@ export const OrganogramSection: React.FC = () => {
             <span>Structured for unyielding accountability, client audit readiness, and zero-loss operations.</span>
           </div>
           <div className="flex items-center gap-2 font-mono text-[11px] text-slate-500">
-            <span>CAC RC: 3684306</span>
+            <span>CAC BN: 3684306</span>
             <span>•</span>
             <span>COREN: R.79,476</span>
           </div>

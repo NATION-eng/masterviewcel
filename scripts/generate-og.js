@@ -154,7 +154,7 @@ async function createOgImage() {
         Managing Director / CEO • COREN Reg: R.79,476
       </text>
       <text x="85" y="64" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">
-        CAC Registered: RC 7361706 • Port Harcourt HQ
+        CAC Registered: BN 3684306 • Port Harcourt HQ
       </text>
     </g>
 

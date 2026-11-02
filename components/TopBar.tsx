@@ -39,7 +39,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenRfq }) => {
             </a>
             <span className="text-slate-300">|</span>
             <span className="inline-flex items-center text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 font-bold">
-              <ShieldCheck className="w-3 h-3 mr-1 text-amber-600" /> RC: 7361706
+              <ShieldCheck className="w-3 h-3 mr-1 text-amber-600" /> CAC BN: 3684306
             </span>
           </div>
 

@@ -38,9 +38,15 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="pt-1 flex flex-wrap items-center gap-2 text-xs">
-              <span className="px-2.5 py-1 rounded bg-slate-900 text-amber-300 font-mono border border-slate-800 flex items-center gap-1 text-[11px]">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> RC: 3684306
-              </span>
+              <a
+                href="/images/cac-certificate.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Official CAC Registration Certificate"
+                className="px-2.5 py-1 rounded bg-slate-900 text-amber-300 hover:text-amber-200 hover:border-amber-500/50 transition-colors font-mono border border-slate-800 flex items-center gap-1 text-[11px]"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> CAC BN: 3684306
+              </a>
               <span className="px-2.5 py-1 rounded bg-slate-900 text-slate-300 font-mono border border-slate-800 text-[11px]">
                 TIN: 31664498-0001
               </span>

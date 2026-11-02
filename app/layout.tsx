@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ),
   title: "Masterview Consults | Construction, Electrical, Mechanical, Steel & Logistics",
   description:
-    "Masterview Consults is a premier indigenous Nigerian enterprise based in Port Harcourt (RC: 3684306). We deliver certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement services, facility maintenance, general engineering consultancy, and nationwide heavy haulage logistics.",
+    "Masterview Consults is a premier indigenous Nigerian enterprise based in Port Harcourt (CAC BN: 3684306). We deliver certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement services, facility maintenance, general engineering consultancy, and nationwide heavy haulage logistics.",
   keywords: [
     "Masterview Consults",
     "Masterview Port Harcourt",
@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     "General Engineering Consultancy",
     "Heavy Haulage Logistics Nigeria",
     "Engr Jonathan David CEO",
+    "CAC BN 3684306",
+    "BN 3684306",
     "RC 3684306",
   ],
   authors: [{ name: "Masterview Consults" }],
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Masterview Consults",
     description:
-      "Delivering certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement, maintenance, and logistics across Nigeria. RC: 3684306.",
+      "Delivering certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement, maintenance, and logistics across Nigeria. CAC BN: 3684306.",
     url: "https://masterviewcel.vercel.app",
     siteName: "Masterview Consults",
     locale: "en_NG",
@@ -77,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Masterview Consults",
     description:
-      "Delivering certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement, maintenance, and logistics across Nigeria. RC: 3684306.",
+      "Delivering certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement, maintenance, and logistics across Nigeria. CAC BN: 3684306.",
     images: ["/images/og-preview.jpg?v=2"],
     creator: "@masterviewcel",
   },
@@ -97,8 +99,8 @@ export default function RootLayout({
     logo: "https://masterviewcel.vercel.app/images/m-cel-logo.jpg",
     image: "https://masterviewcel.vercel.app/images/og-preview.jpg?v=2",
     description:
-      "Masterview Consults is a premier indigenous Nigerian enterprise based in Port Harcourt (RC: 3684306). We deliver certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement services, facility maintenance, general engineering consultancy, and nationwide heavy haulage logistics.",
-    identifier: "RC: 3684306",
+      "Masterview Consults is a premier indigenous Nigerian enterprise based in Port Harcourt (CAC BN: 3684306). We deliver certified construction works, electrical & mechanical installations, steel & metal projects, technical procurement services, facility maintenance, general engineering consultancy, and nationwide heavy haulage logistics.",
+    identifier: "CAC BN: 3684306",
     taxID: "31664498-0001",
     address: {
       "@type": "PostalAddress",

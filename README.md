@@ -6,14 +6,14 @@ The official web platform for **Masterview Consults**, an indigenous engineering
 [![React 18](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev)
 [![Framer Motion](https://img.shields.io/badge/Motion-Framer-purple.svg)](https://framer.com/motion)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com)
-[![CAC Registered](https://img.shields.io/badge/CAC%20Registered-RC%3A%203684306-gold.svg)](https://www.masterviewcel.com)
+[![CAC Registered](https://img.shields.io/badge/CAC%20Registered-BN%3A%203684306-gold.svg)](https://www.masterviewcel.com)
 
 ---
 
 ## 🏢 Corporate Profile
 
 * **Corporate Entity:** Masterview Consults
-* **Registration:** RC: 3684306 (Federal Republic of Nigeria)
+* **Registration:** CAC BN: 3684306 (Federal Republic of Nigeria • CAMA 2020)
 * **Headquarters:** 4 Twin-Dove Complex, Anglican Road, Rumualuogu, Port Harcourt, Rivers State, Nigeria
 * **Managing Director / CEO:** Engr. Jonathan, David J. (COREN: `R.79,476` • NSE: `66878`)
 * **Contacts:** `09036130587` | `+234 706 383 6336`

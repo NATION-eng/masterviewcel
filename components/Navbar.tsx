@@ -368,7 +368,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                 </button>
 
                 <p className="text-[10px] text-center text-slate-400 font-mono pt-1">
-                  CAC RC: 7361706 • COREN: R.79,476 • Port Harcourt
+                  CAC BN: 3684306 • COREN: R.79,476 • Port Harcourt
                 </p>
               </div>
 
