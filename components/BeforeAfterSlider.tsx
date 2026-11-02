@@ -23,7 +23,7 @@ const comparisonCases: ComparisonCase[] = [
   {
     id: "obite",
     name: "Obite Gas Plant CCR",
-    facility: "OML 58 Obite Gas Processing Plant • TotalEnergies EP Nigeria",
+    facility: "OML 58 Obite Gas Processing Plant • TotalEnergies / Neeqoro Ultimate Ventures",
     proposalNo: "M-CEL 25/01/TP001",
     existingImg: "/images/totalenergies/ccr-existing-obite-real.png",
     proposedImg: "/images/totalenergies/ccr-proposed-obite-3d.png",
@@ -39,7 +39,7 @@ const comparisonCases: ComparisonCase[] = [
   {
     id: "obagi",
     name: "Obagi Flowstation CCR",
-    facility: "OML 58 Obagi Field Flowstation • TotalEnergies EP Nigeria",
+    facility: "OML 58 Obagi Field Flowstation • TotalEnergies / Neeqoro Ultimate Ventures",
     proposalNo: "M-CEL 25/01/TP002",
     existingImg: "/images/totalenergies/ccr-existing-obagi-real.png",
     proposedImg: "/images/totalenergies/ccr-proposed-obagi-3d.png",
@@ -105,12 +105,23 @@ export const BeforeAfterSlider: React.FC = () => {
       {/* Header Info */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 pb-6 border-b border-slate-800 gap-4 sm:gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2 border border-amber-400/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 border border-amber-400/30">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Interactive Engineering Comparison</span>
           </div>
+          <div className="flex items-center gap-2 mb-2">
+            <div className="relative w-8 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-700">
+              <Image src="/images/logos/totalenergies.png" alt="TotalEnergies Logo" fill className="object-contain" />
+            </div>
+            <div className="relative w-7 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-700">
+              <Image src="/images/client-neeqoro.png" alt="Neeqoro Ultimate Ventures Logo" fill className="object-contain" />
+            </div>
+            <span className="text-[11px] sm:text-xs text-amber-400 font-bold uppercase tracking-wider">
+              TotalEnergies (TEPNG) / Neeqoro Ultimate Ventures
+            </span>
+          </div>
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white">
-            TotalEnergies Central Control Room Upgrade
+            TotalEnergies & Neeqoro Central Control Room Upgrade
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
             Site Investigation & Ergonomic Overhaul • {activeCase.facility} • Proposal:{" "}

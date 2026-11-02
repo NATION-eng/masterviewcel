@@ -360,12 +360,16 @@ const corporateContracts: ContractProject[] = [
     id: "totalenergies-ccr",
     client: "TotalEnergies EP Nigeria Limited (TEPNG)",
     clientLogo: "/images/logos/totalenergies.png",
+    partner: {
+      name: "Neeqoro Ultimate Ventures",
+      logo: "/images/client-neeqoro.png"
+    },
     role: "Technical Lead",
     title: "Central Control Room (CCR) & Production Building Modernization",
     location: "OML 58 District • Obite Gas Plant & Obagi Field Flowstation",
-    scope: "Field diagnostic survey, architectural overhaul, curved operator console pods, 5-panel Sony video walls, anti-static raised steel flooring, acoustic ceilings, and biometric security systems under proposals M-CEL 25/01/TP001 & TP002.",
+    scope: "Field diagnostic survey, architectural overhaul, curved operator console pods, 5-panel Sony video walls, anti-static raised steel flooring, acoustic ceilings, and biometric security systems under proposals M-CEL 25/01/TP001 & TP002 executed in partnership with Neeqoro Ultimate Ventures.",
     category: "Oil & Gas",
-    tags: ["OML 58 District", "CCR Modernization", "SCADA Architecture", "Raised Steel Floors", "Ergonomics"],
+    tags: ["OML 58 District", "CCR Modernization", "Neeqoro Ultimate Ventures", "SCADA Architecture", "Raised Steel Floors", "Ergonomics"],
     jumpLink: "#totalenergies-ccr-section",
     jumpText: "View Interactive Before/After & 3D Renders"
   },
@@ -719,23 +723,33 @@ export default function ProjectsPage() {
         <section id="totalenergies-ccr-section" className="py-12 sm:py-16 bg-slate-950 border-b border-slate-800 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            {/* TotalEnergies Client Header Banner */}
+            {/* TotalEnergies & Neeqoro Client Header Banner */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-slate-900/90 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-2 shrink-0 shadow-md">
-                  <Image
-                    src="/images/logos/totalenergies.png"
-                    alt="TotalEnergies Logo"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-2 shrink-0 shadow-md">
+                    <Image
+                      src="/images/logos/totalenergies.png"
+                      alt="TotalEnergies Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-1.5 shrink-0 shadow-md">
+                    <Image
+                      src="/images/client-neeqoro.png"
+                      alt="Neeqoro Ultimate Ventures Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
                 </div>
                 <div>
                   <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block">
-                    Multinational Energy Operator Client
+                    Multinational Energy Operator & Technical Partner
                   </span>
                   <h3 className="text-base sm:text-xl font-bold text-white font-heading">
-                    TotalEnergies EP Nigeria Limited (TEPNG)
+                    TotalEnergies EP Nigeria (TEPNG) / Neeqoro Ultimate Ventures
                   </h3>
                   <p className="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
                     <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
