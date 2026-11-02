@@ -50,13 +50,13 @@ const armyGallery = [
   },
   {
     src: "/images/army/army-finished-6-walkway.jpg",
-    title: "Interlocking Paved Perimeter Walkway",
-    desc: "Heavy-duty stone interlocking pavers forming an all-weather access walkway along the high security chain-link enclosure."
+    title: "Perimeter Security Enclosure & Spectator Corridor",
+    desc: "Clear perspective along the high-tensile security chain-link fence, curbed landscaping bed, and spectator corridor leading towards the grandstand and clubhouse."
   },
   {
     src: "/images/army/army-finished-7-paved-perimeter.jpg",
-    title: "Paved Facility Grounds & Landscaping",
-    desc: "Expansive finished paved surroundings, foundation curbs, and drainage infrastructure enclosing the 16 Brigade sports complex."
+    title: "Grandstand Pavilion Flank & Pitch Perimeter",
+    desc: "View along the spectator grandstand terracing, cantilever weather canopy, landscaped perimeter curb, and FIFA-spec turf enclosure."
   },
 ];
 

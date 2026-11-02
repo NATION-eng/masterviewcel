@@ -11,8 +11,8 @@ const armyPhotos = [
   { src: "/images/army/army-finished-3-seats.jpg", caption: "Stepped concrete spectator terracing with high-durability polymer bucket seats" },
   { src: "/images/army/army-finished-4-grandstand-front.jpg", caption: "Front elevation view of the sheltered spectator pavilion through perimeter netting" },
   { src: "/images/army/army-finished-5-clubhouse.jpg", caption: "Recreation clubhouse lounge with stone-coated tile roofing & water tower" },
-  { src: "/images/army/army-finished-6-walkway.jpg", caption: "Interlocking stone paved access walkway along high security perimeter chain-link fence" },
-  { src: "/images/army/army-finished-7-paved-perimeter.jpg", caption: "Expansive paved grounds & perimeter landscaping enclosing the sports facility" },
+  { src: "/images/army/army-finished-6-walkway.jpg", caption: "Perimeter security chain-link fence, curbed landscaping bed & corridor to pavilion" },
+  { src: "/images/army/army-finished-7-paved-perimeter.jpg", caption: "Sheltered grandstand pavilion flank, landscaped curbs & synthetic pitch boundary" },
 ];
 
 export const ProjectSpotlight: React.FC = () => {
