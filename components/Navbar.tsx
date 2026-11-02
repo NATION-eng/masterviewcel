@@ -20,7 +20,8 @@ import {
   Award, 
   Mail, 
   ArrowRight,
-  MessageSquare
+  MessageSquare,
+  GitBranch
 } from "lucide-react";
 
 interface NavbarProps {
@@ -31,6 +32,7 @@ interface NavbarProps {
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About Us" },
+  { href: "/#organogram", label: "Governance" },
   { href: "/#services", label: "Services" },
   { href: "/logistics", label: "Logistics Hub" },
   { href: "/projects", label: "Projects" },
@@ -233,6 +235,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span>About Corporate Profile</span>
+                </Link>
+
+                <Link
+                  href="/#organogram"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-purple-50 hover:text-mcel-purple transition-colors font-semibold text-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-mcel-purple shrink-0">
+                    <GitBranch className="w-4 h-4" />
+                  </div>
+                  <span>Corporate Structure (Organogram)</span>
                 </Link>
 
                 <Link

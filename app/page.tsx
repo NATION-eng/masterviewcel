@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { HeroAgency } from "@/components/HeroAgency";
 import { ClientsMarquee } from "@/components/ClientsMarquee";
 import { ExecutiveMessage } from "@/components/ExecutiveMessage";
+import { OrganogramSection } from "@/components/OrganogramSection";
 import { ServicesMatrix } from "@/components/ServicesMatrix";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { ProjectSpotlight } from "@/components/ProjectSpotlight";
@@ -43,7 +44,10 @@ export default function HomePage() {
         {/* 5. EXECUTIVE LEADERSHIP & CORPORATE PROFILE (Engr. Jonathan David J.) */}
         <ExecutiveMessage />
 
-        {/* 6. EIGHT CORE ENGINEERING DISCIPLINES (With International Standards Badges) */}
+        {/* 6. CORPORATE GOVERNANCE & ORGANOGRAM (Board -> MD -> Projects / Corporate) */}
+        <OrganogramSection />
+
+        {/* 7. EIGHT CORE ENGINEERING DISCIPLINES (With International Standards Badges) */}
         <ServicesMatrix onSelectService={openRfqWithService} />
 
         {/* 7. SIGNATURE INTERACTIVE "BEFORE & AFTER" CONTROL ROOM SLIDER */}
