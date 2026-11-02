@@ -119,58 +119,58 @@ const nlngGallery = [
 
 const horandezGallery = [
   {
-    src: "/images/horandez/horandez-1-steel-erection.jpg",
-    title: "Structural Steel Frame & Rafter Erection",
-    desc: "Mobile crane hoisting and rigger positioning of heavy universal beam (UB) roof rafters and knee-braced portal frames across the 40m clear span.",
-    phase: "Steel Erection"
-  },
-  {
-    src: "/images/horandez/horandez-2-portal-frame.jpg",
-    title: "Full 40m × 40m Structural Skeleton",
-    desc: "Complete 1,600 sqm clear-span structural steel skeleton framework, featuring fabricated I-beam stanchions, cold-formed roof purlins, and wall girts.",
-    phase: "Portal Framework"
-  },
-  {
-    src: "/images/horandez/horandez-3-anchor-bolts.jpg",
-    title: "Anchor Bolt Setting & Base Plate Alignment",
-    desc: "Precision spirit-level calibration and lock-nut leveling of heavy M24 foundation holding-down anchor bolt assemblies prior to column base plate grouting.",
-    phase: "Anchor Bolt Setting"
-  },
-  {
-    src: "/images/horandez/horandez-4-column-pedestal.jpg",
-    title: "Reinforced Concrete Column Pedestal",
-    desc: "Cast reinforced concrete stub column pedestal with protruding high-yield starter bars and formwork bracing tied into the deep pad foundation.",
-    phase: "Column Pedestal"
-  },
-  {
-    src: "/images/horandez/horandez-5-beam-joint-assembly.jpg",
-    title: "Heavy Beam Knee Joint Bolting",
-    desc: "Steel fabricators torquing grade 8.8 structural bolts on thick end-plate moment connections with stiffener gusset plates.",
-    phase: "Bolted Connections"
-  },
-  {
     src: "/images/horandez/horandez-6-foundation-trenches.jpg",
-    title: "Continuous Foundation Trenches & Cages",
-    desc: "Excavated perimeter strip foundation trenches lined with reinforced rebar column cages, timber shuttering, and hollow block retaining walls.",
+    title: "Continuous Foundation Trenches & Substructure Rebar",
+    desc: "Excavation of continuous perimeter foundation trenches, blinding concrete layer, and staging of heavy high-yield steel rebar cages along the 40m building perimeter.",
     phase: "Substructure Trenching"
   },
   {
     src: "/images/horandez/horandez-7-mcel-engineer-rebar.jpg",
-    title: "Masterview Engineer Rebar Inspection",
-    desc: "Masterview Consults project engineer in branded safety PPE inspecting rebar spacing, cover blocks, and blinding layer inside the foundation pit.",
+    title: "Masterview Resident Engineer Foundation Inspection",
+    desc: "Masterview Consults project engineer in certified M-CEL safety PPE conducting pre-pour inspection of foundation pad rebar spacing, cover blocks, and pit dewatering.",
     phase: "QA/QC Inspection"
+  },
+  {
+    src: "/images/horandez/horandez-4-column-pedestal.jpg",
+    title: "Reinforced Concrete Column Pedestals",
+    desc: "Formwork alignment and casting of heavy reinforced concrete stub column pedestals tied directly into deep spread footings with exposed high-tensile starter bars.",
+    phase: "Column Pedestals"
+  },
+  {
+    src: "/images/horandez/horandez-3-anchor-bolts.jpg",
+    title: "Precision M24 Holding-Down Anchor Bolt Alignment",
+    desc: "Engineers verifying elevation levels and vertical plumb on M24 high-tensile steel holding-down anchor bolt templates to guarantee sub-millimeter tolerances for column base plates.",
+    phase: "Anchor Bolt Setting"
+  },
+  {
+    src: "/images/horandez/horandez-5-beam-joint-assembly.jpg",
+    title: "I-Beam Knee Joint & Moment Connection Bolting",
+    desc: "Specialist riggers assembling universal beam (UB) knee moment connections with stiffened gusset plates, torquing Grade 8.8 structural bolts prior to crane lifting.",
+    phase: "Bolted Connections"
+  },
+  {
+    src: "/images/horandez/horandez-1-steel-erection.jpg",
+    title: "Mobile Crane Hoisting & 40m Rafter Erection",
+    desc: "Mobile hydraulic crane hoisting clear-span roof rafters and portal frame bents into position, with certified ironworkers securing apex connections at elevation.",
+    phase: "Heavy Steel Erection"
+  },
+  {
+    src: "/images/horandez/horandez-2-portal-frame.jpg",
+    title: "Completed 1,600 sqm Structural Steel Portal Skeleton",
+    desc: "Full-span perspective of the 40m × 40m structural steel skeleton complete with universal columns, cold-formed Z-purlins, wall girts, and overhead crane runway beams.",
+    phase: "Portal Framework"
   },
   {
     src: "/images/horandez/horandez-8-side-cladding.jpg",
     title: "Industrial Blue Profiled Wall Cladding",
-    desc: "Installation of weather-sealed blue corrugated industrial steel cladding sheets with translucent daylight eaves along the 40m warehouse facade.",
+    desc: "Installation of durable 0.55mm prepainted galvanized corrugated blue steel wall sheets with weather-tight laps and translucent polycarbonate daylighting panels.",
     phase: "Wall Cladding"
   },
   {
     src: "/images/horandez/horandez-9-gable-roof-cladding.jpg",
-    title: "Gable Elevation & Roof Sheeting",
-    desc: "External scaffolding access and installation of apex gable wall cladding and roof panels on the 40m × 40m warehouse facility.",
-    phase: "Roof & Gable Envelope"
+    title: "Scaffolding & Exterior Blue Gable Sheeting Installation",
+    desc: "External scaffolding access and installation of apex gable wall cladding, barge boards, and weather-sealed roof ridge capping across the warehouse envelope.",
+    phase: "Roof & Gable Enclosure"
   },
 ];
 
