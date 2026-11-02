@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
-  <!-- Dynamic Technical Mark -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" fill="none">
+  <!-- Geometric Badge -->
   <g transform="translate(10, 15)">
-    <rect x="6" y="8" width="38" height="38" rx="6" fill="#0A2540"/>
-    <path d="M14 27 L25 16 L36 27 L25 38 Z" stroke="#00D4B2" stroke-width="3" fill="none"/>
-    <circle cx="25" cy="27" r="4" fill="#00D4B2"/>
-    <path d="M25 8 L25 14 M25 40 L25 46 M6 27 L12 27 M38 27 L44 27" stroke="#00D4B2" stroke-width="2"/>
+    <!-- Red Upper Left Triangle / Trapezoid -->
+    <polygon points="0,0 60,0 15,60 0,60" fill="#E11D48" />
+    <!-- Deep Navy/Blue Lower Right Triangle / Trapezoid -->
+    <polygon points="65,0 75,0 75,60 20,60" fill="#1E3A8A" />
   </g>
-  <!-- Text -->
-  <text x="64" y="38" font-family="'Montserrat', 'Arial', sans-serif" font-size="20" font-weight="800" fill="#0A2540" letter-spacing="1">INTESAT</text>
-  <text x="65" y="52" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="600" fill="#4A5568" letter-spacing="1.5">SERVICES LIMITED</text>
-  <text x="65" y="63" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="600" fill="#00A389" letter-spacing="0.5">RC: 456400 • NCDMB REGISTERED</text>
+  
+  <!-- Typography -->
+  <text x="100" y="48" font-family="'Arial Black', 'Montserrat', 'Helvetica Neue', sans-serif" font-size="34" font-weight="900" fill="#0F172A" letter-spacing="2">INTESAT</text>
+  <text x="102" y="70" font-family="'Segoe UI', 'Arial', sans-serif" font-size="13" font-weight="700" fill="#64748B" letter-spacing="2">SERVICES LIMITED</text>
 </svg>

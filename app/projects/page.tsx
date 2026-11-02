@@ -24,9 +24,72 @@ const armyGallery = [
   { src: "/images/army/army-4-security-mesh.jpg", title: "Security Enclosure Mesh", desc: "Close-up perspective of the heavy-gauge security mesh fence." },
 ];
 
+const nlngGallery = [
+  {
+    src: "/images/nlng/nlng-6-membrane-complete.jpg",
+    title: "Completed 30m × 6.3m Waterproof Envelope",
+    desc: "Seamless torch-on elastomeric bitumen membrane fully sealed across the entire roof expanse under strict NLNG QA/QC protocols.",
+    phase: "Waterproof Membrane"
+  },
+  {
+    src: "/images/nlng/nlng-3-bituflame-rolls.jpg",
+    title: "Bituflame 5mm APP Bitumen Membranes",
+    desc: "Heavy-duty 5mm modified bitumen waterproofing membrane rolls staged alongside the parapet prior to hot application.",
+    phase: "Material Staging"
+  },
+  {
+    src: "/images/nlng/nlng-4-membrane-felting.jpg",
+    title: "Torching & Multi-Ply Re-Felting In Progress",
+    desc: "Specialist applicators welding the membrane laps with high-temperature gas torches to guarantee an impermeable seal.",
+    phase: "Torch Application"
+  },
+  {
+    src: "/images/nlng/nlng-5-seam-alignment.jpg",
+    title: "Precision Seam Alignment & Weld Quality",
+    desc: "Strict inspection of membrane lap overlaps and edge detailing to eliminate capillary water ingress.",
+    phase: "Seam Inspection"
+  },
+  {
+    src: "/images/nlng/nlng-2-screed-inspection.jpg",
+    title: "Cured Deck Screed & Slope Verification",
+    desc: "Masterview & Intesat engineers verifying fall gradient and level tolerances on the newly cast concrete screed.",
+    phase: "Civil Substructure"
+  },
+  {
+    src: "/images/nlng/nlng-1-deck-prep.jpg",
+    title: "Preliminary Deck Preparation & Screeding",
+    desc: "Substrate clearing, surface scarification, and aggregate mixing with NLNG Residential Area (RA Finima) facilities in the backdrop.",
+    phase: "Site Preparation"
+  },
+  {
+    src: "/images/nlng/nlng-7-tile-installation.jpg",
+    title: "Protective Bituminous Mastic & Paving",
+    desc: "Operative applying hot mastic bonding compound and laying protective promenade paving tiles.",
+    phase: "Ballast Installation"
+  },
+  {
+    src: "/images/nlng/nlng-8-finished-deck.jpg",
+    title: "Finished Walkable Promenade Roof Deck",
+    desc: "Interlocked promenade pavers protecting the waterproofing membrane against UV degradation and foot traffic.",
+    phase: "Handover Deck"
+  },
+  {
+    src: "/images/nlng/nlng-9-engineering-crew.jpg",
+    title: "Joint Engineering & HSE Delivery Team",
+    desc: "Masterview Consults and Intesat Services certified technical crew in full PPE on site at NLNG Bonny Island.",
+    phase: "Certified Workforce"
+  },
+  {
+    src: "/images/nlng/nlng-10-toolbox-meeting.jpg",
+    title: "On-Site HSE & Field Supervision",
+    desc: "Supervisory crew under the weather awning conducting mandatory Permit-to-Work (PTW) safety risk assessment.",
+    phase: "HSE Compliance"
+  },
+];
+
 export default function ProjectsPage() {
   const [rfqOpen, setRfqOpen] = useState(false);
-  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [lightboxData, setLightboxData] = useState<{ src: string; title: string; desc: string; index?: number; total?: number } | null>(null);
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -136,7 +199,7 @@ export default function ProjectsPage() {
               {armyGallery.map((item, idx) => (
                 <div
                   key={item.src}
-                  onClick={() => setLightboxImg(item.src)}
+                  onClick={() => setLightboxData({ src: item.src, title: item.title, desc: item.desc, index: idx + 1, total: armyGallery.length })}
                   className="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-mcel-purple transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer"
                 >
                   <div className="relative w-full h-52 sm:h-60 overflow-hidden bg-slate-900">
@@ -166,7 +229,100 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 3: OTHER NOTABLE PROJECTS */}
+        {/* SECTION 3: NIGERIA LNG LIMITED (NLNG RA FINIMA, BONNY ISLAND) */}
+        <section id="nlng-bonny" className="py-14 sm:py-20 bg-slate-900 text-white border-b border-slate-800 scroll-mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-12 gap-6">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3 border border-emerald-500/30">
+                  <Camera className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Verified Field Case Study • 10 On-Site Photos</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
+                  Nigeria LNG Limited (NLNG) — Roof Waterproofing & Re-Felting
+                </h2>
+                <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                  Turnkey multi-ply elastomeric bitumen re-felting, screed base leveling to falls, and protective promenade ballast paving executed on the 30m × 6.3m roof deck at the NLNG Residential Area (RA Finima), Bonny Island, Rivers State.
+                </p>
+              </div>
+
+              {/* Technical Specifications Card */}
+              <div className="bg-slate-800/90 rounded-2xl p-4 sm:p-5 border border-slate-700 max-w-md shrink-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="relative w-12 h-10 bg-white rounded-lg p-1 shrink-0">
+                    <Image src="/images/logos/nlng.png" alt="NLNG Logo" fill className="object-contain" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">Contract Details</h4>
+                    <p className="text-[11px] text-emerald-400">NLNG RA Finima • Bonny Island</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+                    <span className="text-slate-400 block text-[10px]">Expanse</span>
+                    <strong className="text-white font-bold">30m × 6.3m (189 sqm)</strong>
+                  </div>
+                  <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+                    <span className="text-slate-400 block text-[10px]">Membrane</span>
+                    <strong className="text-white font-bold">Bituflame 5mm APP</strong>
+                  </div>
+                  <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+                    <span className="text-slate-400 block text-[10px]">Protection</span>
+                    <strong className="text-white font-bold">Promenade Ballast Tiles</strong>
+                  </div>
+                  <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+                    <span className="text-slate-400 block text-[10px]">HSE Standard</span>
+                    <strong className="text-white font-bold">NLNG Island PTW Compliant</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 10 Photos Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
+              {nlngGallery.map((item, idx) => (
+                <div
+                  key={item.src}
+                  onClick={() => setLightboxData({ src: item.src, title: item.title, desc: item.desc, index: idx + 1, total: nlngGallery.length })}
+                  className="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-amber-400 transition-all duration-300 shadow-md hover:shadow-2xl cursor-pointer flex flex-col justify-between"
+                >
+                  <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-slate-950">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-50 group-hover:opacity-75 transition-opacity" />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-emerald-500/90 text-white text-[9px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                      {item.phase}
+                    </span>
+                    <span className="absolute bottom-2 right-2 text-white/90 text-[10px] font-mono bg-slate-900/80 px-1.5 py-0.5 rounded border border-white/10">
+                      0{idx + 1}/10
+                    </span>
+                  </div>
+                  <div className="p-3 sm:p-3.5 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-bold text-white text-xs mb-1 group-hover:text-amber-400 transition-colors line-clamp-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-300 leading-relaxed line-clamp-2">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-semibold text-amber-400 group-hover:underline mt-2 inline-flex items-center gap-1">
+                      <span>View</span> &rarr;
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION 4: OTHER NOTABLE PROJECTS */}
         <section className="py-14 sm:py-20 bg-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -197,7 +353,7 @@ export default function ProjectsPage() {
                 </p>
               </div>
 
-              {/* NLNG Finima */}
+              {/* NLNG Finima Quick Reference */}
               <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 block mb-1">
                   Nigeria LNG Limited (NLNG)
@@ -208,9 +364,15 @@ export default function ProjectsPage() {
                 <p className="text-xs text-slate-500 mb-2.5 flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" /> NLNG RA Finima, Bonny Island
                 </p>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed mb-3">
                   Multi-ply elastomeric waterproofing and membrane protection executed under strict island PTW regulations.
                 </p>
+                <a
+                  href="#nlng-bonny"
+                  className="text-xs font-bold text-emerald-700 hover:text-emerald-800 uppercase tracking-wider inline-flex items-center gap-1"
+                >
+                  <span>Jump to 10 Field Photos</span> &uarr;
+                </a>
               </div>
 
               {/* ICTSI Onne */}
@@ -237,22 +399,37 @@ export default function ProjectsPage() {
       </main>
 
       {/* FULLSCREEN LIGHTBOX MODAL */}
-      {lightboxImg && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
+      {lightboxData && (
+        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
           <button
-            onClick={() => setLightboxImg(null)}
-            className="absolute top-4 right-4 text-white/80 hover:text-white p-2 rounded-full bg-white/10 z-50 cursor-pointer active:scale-95"
+            onClick={() => setLightboxData(null)}
+            className="absolute top-4 right-4 text-white/80 hover:text-white p-2.5 rounded-full bg-white/10 z-50 cursor-pointer active:scale-95 transition-all"
             aria-label="Close modal"
           >
             <X className="w-6 h-6" />
           </button>
+          
           <div className="relative max-w-5xl w-full h-[65vh] sm:h-[75vh] flex items-center justify-center">
             <Image
-              src={lightboxImg}
-              alt="Project Inspection Photo"
+              src={lightboxData.src}
+              alt={lightboxData.title}
               fill
               className="object-contain"
             />
+          </div>
+
+          <div className="absolute bottom-4 sm:bottom-6 inset-x-0 text-center text-white px-4">
+            <h4 className="font-bold text-amber-300 text-xs sm:text-sm max-w-lg mx-auto">
+              {lightboxData.title}
+            </h4>
+            <p className="text-slate-300 text-[11px] sm:text-xs max-w-xl mx-auto mt-1 leading-relaxed">
+              {lightboxData.desc}
+            </p>
+            {lightboxData.index && lightboxData.total && (
+              <p className="text-slate-400 text-[10px] font-mono mt-1">
+                Photo {lightboxData.index} of {lightboxData.total}
+              </p>
+            )}
           </div>
         </div>
       )}

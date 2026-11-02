@@ -199,13 +199,16 @@ export const ProjectSpotlight: React.FC = () => {
             <div>
               <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 bg-slate-900">
                 <Image
-                  src="/images/construction/rebar-steel-fixing.jpg"
+                  src="/images/nlng/nlng-6-membrane-complete.jpg"
                   alt="NLNG Roof Bitumen Re-Felting"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-700 text-white text-[10px] font-bold uppercase tracking-wider shadow">
                   Facility Waterproofing
+                </span>
+                <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-amber-300 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 border border-white/10">
+                  <Camera className="w-3 h-3" /> 10 Field Photos
                 </span>
               </div>
               <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
@@ -215,14 +218,14 @@ export const ProjectSpotlight: React.FC = () => {
                 Client: Nigeria LNG Limited (NLNG) • Finima, Bonny Island
               </p>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                Elastomeric bitumen membrane re-felting, substrate repair, and thermal insulation over the 30m × 6.3m concrete roof slab of the NLNG RA Staff Club under strict island PTW protocols.
+                Elastomeric Bituflame 5mm APP membrane re-felting, concrete screed laid to fall, and protective promenade ballast pavers executed across 30m × 6.3m roof expanse under strict NLNG island PTW protocols.
               </p>
             </div>
             <Link
-              href="/projects"
+              href="/projects#nlng-bonny"
               className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
             >
-              <span>Explore Technical Scope</span>
+              <span>Explore 10 On-Site Field Photos</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

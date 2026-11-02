@@ -4,14 +4,14 @@ import React from "react";
 import Image from "next/image";
 
 const clients = [
-  { name: "TotalEnergies", src: "/images/logos/totalenergies.svg", width: 170 },
-  { name: "Nigeria LNG Limited", src: "/images/logos/nlng.svg", width: 160 },
-  { name: "Nigerian Army", src: "/images/logos/nigerian-army.svg", width: 170 },
+  { name: "Nigeria LNG Limited", src: "/images/logos/nlng.png", width: 145 },
+  { name: "TotalEnergies", src: "/images/logos/totalenergies.png", width: 175 },
+  { name: "Nigerian Army", src: "/images/logos/nigerian-army.png", width: 175 },
+  { name: "ICTSI Onne Terminal", src: "/images/logos/ictsi.png", width: 165 },
+  { name: "Librod Energy Services", src: "/images/logos/librod.png", width: 150 },
+  { name: "Intesat Services Limited", src: "/images/logos/intesat.png", width: 160 },
   { name: "Neeqoro Ultimate Ventures", src: "/images/client-neeqoro.png", width: 140 },
-  { name: "Intesat Services Limited", src: "/images/logos/intesat.svg", width: 160 },
-  { name: "ICTSI Onne Terminal", src: "/images/logos/ictsi.svg", width: 150 },
-  { name: "Librod Energy Services", src: "/images/logos/librod.svg", width: 150 },
-  { name: "Peew-Williams Services", src: "/images/partner-peew-williams.jpg", width: 160 },
+  { name: "Peew-Williams Services", src: "/images/partner-peew-williams.jpg", width: 150 },
   { name: "RL & Control", src: "/images/partner-rl-control.jpg", width: 140 },
 ];
 
