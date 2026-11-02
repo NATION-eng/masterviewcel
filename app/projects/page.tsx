@@ -17,72 +17,96 @@ import {
 } from "lucide-react";
 
 const armyGallery = [
-  { src: "/images/army/army-5-full-pitch.jpg", title: "Full 7-a-side Synthetic Turf Pitch", desc: "40m × 20m FIFA-spec synthetic grass with regulation line markings and relaxation clubhouse building." },
-  { src: "/images/army/army-1-perimeter.jpg", title: "Security Perimeter & Spectator Pavilion", desc: "Galvanized heavy chain-link fencing, concrete curb beam, and cantilevered pavilion roof." },
-  { src: "/images/army/army-2-grandstand.jpg", title: "Stepped Grandstand Terracing", desc: "Reinforced concrete seating tiers designed for 60-person spectator capacity." },
-  { src: "/images/army/army-3-corner-fence.jpg", title: "Corner Fencing & Foundation Curb", desc: "Cast-in-place concrete ground beam with high-tension perimeter chain-link integration." },
-  { src: "/images/army/army-4-security-mesh.jpg", title: "Security Enclosure Mesh", desc: "Close-up perspective of the heavy-gauge security mesh fence." },
+  {
+    src: "/images/army/army-finished-1-pitch.jpg",
+    title: "Completed 40m × 20m Synthetic Turf Pitch",
+    desc: "FIFA-specification two-tone green all-weather synthetic grass with regulation line markings and relaxation clubhouse in the background."
+  },
+  {
+    src: "/images/army/army-finished-2-pavilion.jpg",
+    title: "Sheltered Spectator Grandstand Pavilion",
+    desc: "Reinforced concrete terracing with overhead weather-shield cantilever canopy and red & blue stadium bucket seats."
+  },
+  {
+    src: "/images/army/army-finished-3-seats.jpg",
+    title: "Terraced Seating & Stadium Bucket Seats",
+    desc: "Close-up perspective of stepped concrete grandstand seating tiers fitted with durable UV-resistant polymer bucket seats."
+  },
+  {
+    src: "/images/army/army-finished-4-grandstand-front.jpg",
+    title: "Frontal View of Completed Pavilion",
+    desc: "Full front elevation view of the spectator grandstand with 60-person capacity seen through the security chain-link netting."
+  },
+  {
+    src: "/images/army/army-finished-5-clubhouse.jpg",
+    title: "Recreation Clubhouse & Lounge Building",
+    desc: "Turnkey multi-purpose clubhouse featuring green stone-coated roofing tiles, covered veranda bar lounge, and elevated water storage tower."
+  },
+  {
+    src: "/images/army/army-finished-6-walkway.jpg",
+    title: "Interlocking Paved Perimeter Walkway",
+    desc: "Heavy-duty stone interlocking pavers forming an all-weather access walkway along the high security chain-link enclosure."
+  },
+  {
+    src: "/images/army/army-finished-7-paved-perimeter.jpg",
+    title: "Paved Facility Grounds & Landscaping",
+    desc: "Expansive finished paved surroundings, foundation curbs, and drainage infrastructure enclosing the 16 Brigade sports complex."
+  },
 ];
 
 const nlngGallery = [
   {
-    src: "/images/nlng/nlng-6-membrane-complete.jpg",
-    title: "Completed 30m × 6.3m Waterproof Envelope",
-    desc: "Seamless torch-on elastomeric bitumen membrane fully sealed across the entire roof expanse under strict NLNG QA/QC protocols.",
-    phase: "Waterproof Membrane"
-  },
-  {
-    src: "/images/nlng/nlng-3-bituflame-rolls.jpg",
-    title: "Bituflame 5mm APP Bitumen Membranes",
-    desc: "Heavy-duty 5mm modified bitumen waterproofing membrane rolls staged alongside the parapet prior to hot application.",
-    phase: "Material Staging"
-  },
-  {
-    src: "/images/nlng/nlng-4-membrane-felting.jpg",
-    title: "Torching & Multi-Ply Re-Felting In Progress",
-    desc: "Specialist applicators welding the membrane laps with high-temperature gas torches to guarantee an impermeable seal.",
-    phase: "Torch Application"
-  },
-  {
     src: "/images/nlng/nlng-5-seam-alignment.jpg",
-    title: "Precision Seam Alignment & Weld Quality",
-    desc: "Strict inspection of membrane lap overlaps and edge detailing to eliminate capillary water ingress.",
-    phase: "Seam Inspection"
-  },
-  {
-    src: "/images/nlng/nlng-2-screed-inspection.jpg",
-    title: "Cured Deck Screed & Slope Verification",
-    desc: "Masterview & Intesat engineers verifying fall gradient and level tolerances on the newly cast concrete screed.",
-    phase: "Civil Substructure"
+    title: "Setting the Leveling & Cleaning Top Surface",
+    desc: "Preliminary deck leveling and meticulous surface cleaning across the 30m × 6.3m concrete roof substrate, using straight-edge leveling tools and surface scrapers to guarantee perfect substrate adhesion.",
+    phase: "Leveling & Cleaning"
   },
   {
     src: "/images/nlng/nlng-1-deck-prep.jpg",
-    title: "Preliminary Deck Preparation & Screeding",
-    desc: "Substrate clearing, surface scarification, and aggregate mixing with NLNG Residential Area (RA Finima) facilities in the backdrop.",
-    phase: "Site Preparation"
+    title: "Preparing of the Sandcrete Screed",
+    desc: "On-site batching, aggregate grading, and mechanical mixing of high-strength sandcrete screed to establish precise fall gradients towards drainage outlets across the NLNG RA Finima facility deck.",
+    phase: "Preparing Sandcrete"
   },
   {
-    src: "/images/nlng/nlng-7-tile-installation.jpg",
-    title: "Protective Bituminous Mastic & Paving",
-    desc: "Operative applying hot mastic bonding compound and laying protective promenade paving tiles.",
-    phase: "Ballast Installation"
+    src: "/images/nlng/nlng-2-screed-inspection.jpg",
+    title: "Inspection of Finished Sandcrete Screed",
+    desc: "Joint engineering verification by Masterview Consults and Intesat engineers inspecting the cured, smooth sandcrete screed laid to falls prior to thermal insulation and membrane application.",
+    phase: "Finished Sandcrete Inspection"
   },
   {
     src: "/images/nlng/nlng-8-finished-deck.jpg",
-    title: "Finished Walkable Promenade Roof Deck",
-    desc: "Interlocked promenade pavers protecting the waterproofing membrane against UV degradation and foot traffic.",
-    phase: "Handover Deck"
+    title: "Layout of 500mm × 500mm Foam Glass",
+    desc: "Precision layout of 500mm × 500mm cellular foam glass thermal insulation blocks providing zero-permeability moisture resistance, high compressive strength, and thermal protection across the roof expanse.",
+    phase: "500×500mm Foam Glass Layout"
+  },
+  {
+    src: "/images/nlng/nlng-7-tile-installation.jpg",
+    title: "Bituminous Mastic & Foam Glass Bonding",
+    desc: "Specialist applicator applying high-temperature bituminous bonding mastic and laying 500mm × 500mm foam glass panels, establishing a monolithic, weather-tight thermal barrier.",
+    phase: "Mastic Application"
+  },
+  {
+    src: "/images/nlng/nlng-3-bituflame-rolls.jpg",
+    title: "10mm Thick Felt Waterproofing Material",
+    desc: "Staging of certified 10mm thick heavy-duty elastomeric bitumen felt membrane rolls along the parapet wall, prepared for torch-on re-felting over the insulated substrate.",
+    phase: "10mm Felt Material"
+  },
+  {
+    src: "/images/nlng/nlng-6-membrane-complete.jpg",
+    title: "Completed 500mm × 500mm Foam Glass Envelope",
+    desc: "Full-span overview of the 30m × 6.3m roof deck with completed 500mm × 500mm foam glass layout and multi-ply weatherproofing executed under strict NLNG QA/QC protocols.",
+    phase: "Completed Envelope"
   },
   {
     src: "/images/nlng/nlng-9-engineering-crew.jpg",
-    title: "Joint Engineering & HSE Delivery Team",
-    desc: "Masterview Consults and Intesat Services certified technical crew in full PPE on site at NLNG Bonny Island.",
+    title: "Joint Masterview & Intesat Delivery Team",
+    desc: "Masterview Consults and Intesat Services certified technical crew in full mandatory offshore/island PPE on site at NLNG Bonny Island.",
     phase: "Certified Workforce"
   },
   {
     src: "/images/nlng/nlng-10-toolbox-meeting.jpg",
-    title: "On-Site HSE & Field Supervision",
-    desc: "Supervisory crew under the weather awning conducting mandatory Permit-to-Work (PTW) safety risk assessment.",
+    title: "On-Site HSE Supervision & Toolbox Meeting",
+    desc: "Supervisory crew under the weather awning conducting mandatory daily safety risk assessments and Permit-to-Work (PTW) briefings.",
     phase: "HSE Compliance"
   },
 ];
@@ -185,7 +209,7 @@ export default function ProjectsPage() {
             
             <div className="max-w-3xl mb-8 sm:mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold tracking-wider uppercase mb-2.5">
-                <Camera className="w-3.5 h-3.5" /> Case Study: Nigerian Army 16 Brigade
+                <Camera className="w-3.5 h-3.5" /> Case Study: Nigerian Army 16 Brigade • 7 Completed Photos
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
                 Military Recreation & Sports Complex, Yenagoa
@@ -237,7 +261,7 @@ export default function ProjectsPage() {
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3 border border-emerald-500/30">
                   <Camera className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Verified Field Case Study • 10 On-Site Photos</span>
+                  <span>Verified Field Case Study • Technical Progression Photos</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
                   Nigeria LNG Limited (NLNG) — Roof Waterproofing & Re-Felting
@@ -264,30 +288,30 @@ export default function ProjectsPage() {
                     <strong className="text-white font-bold">30m × 6.3m (189 sqm)</strong>
                   </div>
                   <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
-                    <span className="text-slate-400 block text-[10px]">Membrane</span>
-                    <strong className="text-white font-bold">Bituflame 5mm APP</strong>
+                    <span className="text-slate-400 block text-[10px]">Thermal Layer</span>
+                    <strong className="text-white font-bold">500 × 500mm Foam Glass</strong>
                   </div>
                   <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
-                    <span className="text-slate-400 block text-[10px]">Protection</span>
-                    <strong className="text-white font-bold">Promenade Ballast Tiles</strong>
+                    <span className="text-slate-400 block text-[10px]">Waterproofing</span>
+                    <strong className="text-white font-bold">10mm Thick Felt Material</strong>
                   </div>
                   <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
-                    <span className="text-slate-400 block text-[10px]">HSE Standard</span>
-                    <strong className="text-white font-bold">NLNG Island PTW Compliant</strong>
+                    <span className="text-slate-400 block text-[10px]">Substructure</span>
+                    <strong className="text-white font-bold">Sandcrete Screed to Falls</strong>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* 10 Photos Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
+            {/* Photos Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
               {nlngGallery.map((item, idx) => (
                 <div
                   key={item.src}
                   onClick={() => setLightboxData({ src: item.src, title: item.title, desc: item.desc, index: idx + 1, total: nlngGallery.length })}
                   className="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-amber-400 transition-all duration-300 shadow-md hover:shadow-2xl cursor-pointer flex flex-col justify-between"
                 >
-                  <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-slate-950">
+                  <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-slate-950">
                     <Image
                       src={item.src}
                       alt={item.title}
@@ -299,7 +323,7 @@ export default function ProjectsPage() {
                       {item.phase}
                     </span>
                     <span className="absolute bottom-2 right-2 text-white/90 text-[10px] font-mono bg-slate-900/80 px-1.5 py-0.5 rounded border border-white/10">
-                      0{idx + 1}/10
+                      0{idx + 1}/0{nlngGallery.length}
                     </span>
                   </div>
                   <div className="p-3 sm:p-3.5 flex-grow flex flex-col justify-between">

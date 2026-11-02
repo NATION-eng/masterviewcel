@@ -9,7 +9,7 @@ const clients = [
   { name: "Nigerian Army", src: "/images/logos/nigerian-army.png", width: 175 },
   { name: "ICTSI Onne Terminal", src: "/images/logos/ictsi.png", width: 165 },
   { name: "Librod Energy Services", src: "/images/logos/librod.png", width: 150 },
-  { name: "Intesat Services Limited", src: "/images/logos/intesat.png", width: 160 },
+  { name: "Intesat Services Limited", src: "/images/logos/intesat.png", width: 185 },
   { name: "Neeqoro Ultimate Ventures", src: "/images/client-neeqoro.png", width: 140 },
   { name: "Peew-Williams Services", src: "/images/partner-peew-williams.jpg", width: 150 },
   { name: "RL & Control", src: "/images/partner-rl-control.jpg", width: 140 },

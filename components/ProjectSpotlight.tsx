@@ -6,11 +6,13 @@ import Link from "next/link";
 import { Camera, ChevronRight, X, ChevronLeft, Building, ArrowUpRight } from "lucide-react";
 
 const armyPhotos = [
-  { src: "/images/army/army-5-full-pitch.jpg", caption: "Regulation 40m × 20m 7-a-side all-weather synthetic pitch, line markings & clubhouse" },
-  { src: "/images/army/army-1-perimeter.jpg", caption: "Galvanized perimeter security chain-link fence, concrete ground beam & pavilion canopy" },
-  { src: "/images/army/army-2-grandstand.jpg", caption: "Stepped concrete spectator pavilion grandstand seating with weather-shield roof" },
-  { src: "/images/army/army-3-corner-fence.jpg", caption: "Foundation perimeter curb and high-durability corner chain-link fencing" },
-  { src: "/images/army/army-4-security-mesh.jpg", caption: "Close-up perspective of the heavy-gauge security mesh fence and two-tone turf field" },
+  { src: "/images/army/army-finished-1-pitch.jpg", caption: "Completed 40m × 20m FIFA-spec two-tone synthetic turf pitch & sports clubhouse" },
+  { src: "/images/army/army-finished-2-pavilion.jpg", caption: "Spectator grandstand pavilion with weather-shield roof & red/blue bucket seats" },
+  { src: "/images/army/army-finished-3-seats.jpg", caption: "Stepped concrete spectator terracing with high-durability polymer bucket seats" },
+  { src: "/images/army/army-finished-4-grandstand-front.jpg", caption: "Front elevation view of the sheltered spectator pavilion through perimeter netting" },
+  { src: "/images/army/army-finished-5-clubhouse.jpg", caption: "Recreation clubhouse lounge with stone-coated tile roofing & water tower" },
+  { src: "/images/army/army-finished-6-walkway.jpg", caption: "Interlocking stone paved access walkway along high security perimeter chain-link fence" },
+  { src: "/images/army/army-finished-7-paved-perimeter.jpg", caption: "Expansive paved grounds & perimeter landscaping enclosing the sports facility" },
 ];
 
 export const ProjectSpotlight: React.FC = () => {
@@ -82,7 +84,7 @@ export const ProjectSpotlight: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-emerald-500/30 mb-3">
                 <Camera className="w-3.5 h-3.5 text-amber-400" />
-                <span>5 Real On-Site Field Photos</span>
+                <span>7 Finished Complex Field Photos</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white leading-tight">
@@ -208,7 +210,7 @@ export const ProjectSpotlight: React.FC = () => {
                   Facility Waterproofing
                 </span>
                 <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-amber-300 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 border border-white/10">
-                  <Camera className="w-3 h-3" /> 10 Field Photos
+                  <Camera className="w-3 h-3" /> Field Case Study
                 </span>
               </div>
               <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
@@ -218,14 +220,14 @@ export const ProjectSpotlight: React.FC = () => {
                 Client: Nigeria LNG Limited (NLNG) • Finima, Bonny Island
               </p>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                Elastomeric Bituflame 5mm APP membrane re-felting, concrete screed laid to fall, and protective promenade ballast pavers executed across 30m × 6.3m roof expanse under strict NLNG island PTW protocols.
+                Substrate leveling, sandcrete screed laid to fall, 500mm × 500mm foam glass thermal insulation, and 10mm heavy-duty bitumen felt re-felting across 30m × 6.3m roof expanse under strict NLNG island PTW protocols.
               </p>
             </div>
             <Link
               href="/projects#nlng-bonny"
               className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
             >
-              <span>Explore 10 On-Site Field Photos</span>
+              <span>Explore Verified Field Photos</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
