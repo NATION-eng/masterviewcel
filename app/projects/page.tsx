@@ -174,6 +174,79 @@ const horandezGallery = [
   },
 ];
 
+const spmGallery = [
+  {
+    src: "/images/spm-buoy/spm-6-cad-plan-view.jpg",
+    title: "Draft of Buoy Plan View General Arrangement",
+    desc: "Official certified engineering drawing (Drg No: ONM-E17997-BNYCT-CS-4018-12481-001) drafted for Shell (SPDC) via WAOS. Details buoy top arrangement, 4-bolt type anchor shackles (SWL 130T), turntable structure, mooring platform, and fluid transfer piping.",
+    phase: "CAD General Arrangement",
+    type: "CAD Draft"
+  },
+  {
+    src: "/images/spm-buoy/spm-7-cad-elevation-view.jpg",
+    title: "Draft of Buoy Side Elevation View",
+    desc: "Official certified engineering drawing (Drg No: ONM-E17997-BNYCT-CS-4018-12481-002) drafted for Shell (SPDC) via WAOS. Side elevation illustrating main buoy body draft marks, rotating piping, central pipe swivel, diver's platform, and skirt structure.",
+    phase: "CAD Elevation Drawing",
+    type: "CAD Draft"
+  },
+  {
+    src: "/images/spm-buoy/spm-8-cad-aframe-component.jpg",
+    title: "Draft of Buoy Component: A-Frame Scale 1/10",
+    desc: "Certified mechanical fabrication drafting of the SPM Buoy A-Frame lifting equipment, turntable mounting alignment, sheave assembly, linch pins, thrust washers, and welded plate specifications.",
+    phase: "Component Drawing",
+    type: "CAD Draft"
+  },
+  {
+    src: "/images/spm-buoy/spm-9-cad-tripod-component.jpg",
+    title: "Draft of Buoy Component: Tripod & Tensioning Details",
+    desc: "Engineering detail drawing of SPM Buoy componentry including chain tensioning tripod (SWL 4.5T / 20T / 50T), round bar rungs, ballast platform top plate, and welding schedule.",
+    phase: "Component Drawing",
+    type: "CAD Draft"
+  },
+  {
+    src: "/images/spm-buoy/spm-10-3d-buoy-schematic.jpg",
+    title: "3D SPM Buoy System Architecture",
+    desc: "3D isometric technical diagram detailing the complete SPM Buoy system: mooring platform, central pipe swivel, fluid transfer piping, turntable, chainstopper, and cathodic sacrificial anodes.",
+    phase: "System Architecture",
+    type: "3D CAD"
+  },
+  {
+    src: "/images/spm-buoy/spm-1-onshore-buoy-jetty.jpg",
+    title: "Onshore SPM Buoy, Ogbogoro Jetty",
+    desc: "Resident engineering personnel and hydraulic power unit staged in front of the massive yellow and black deep-water Single-Point Mooring (SPM) Buoy at Ogbogoro Jetty waterfront fabrication yard.",
+    phase: "Onshore Staging",
+    type: "Field Execution"
+  },
+  {
+    src: "/images/spm-buoy/spm-2-drafting-field-survey.jpg",
+    title: "Drafting of the SPM Buoy, Ogbogoro Jetty",
+    desc: "Field survey measurement, structural geometry verification, and drafting dimension takeoffs performed directly on the SPM buoy support frame and skid members at Ogbogoro Jetty.",
+    phase: "Field Survey",
+    type: "Field Execution"
+  },
+  {
+    src: "/images/spm-buoy/spm-3-onsite-assessment.jpg",
+    title: "Onsite Assessment of the SPM Buoy, Ogbogoro Jetty",
+    desc: "Comprehensive onshore structural integrity inspection and dimensional assessment of the elevated deep-water SPM Buoy on support cradles prior to offshore re-deployment.",
+    phase: "Integrity Assessment",
+    type: "Field Execution"
+  },
+  {
+    src: "/images/spm-buoy/spm-4-refurbishment-process.jpg",
+    title: "Refurbishment Process of the SPM Buoy",
+    desc: "Lead draftsman and inspection engineers with survey clipboard taking critical flange, bearing race, and padeye measurements on top of the buoy turret deck.",
+    phase: "Deck Refurbishment",
+    type: "Field Execution"
+  },
+  {
+    src: "/images/spm-buoy/spm-5-joint-crew-inspection.jpg",
+    title: "Joint SPDC & WAOS Engineering Crew Inspection",
+    desc: "Joint Shell Petroleum Development Company (SPDC) and West African Oilfield Services (WAOS) engineering, drafting, and rigging crew standing at the Ogbogoro waterfront following successful manifold piping and structural overhaul.",
+    phase: "Waterfront Delivery",
+    type: "Field Execution"
+  },
+];
+
 interface ContractProject {
   id: string;
   client: string;
@@ -193,6 +266,23 @@ interface ContractProject {
 }
 
 const corporateContracts: ContractProject[] = [
+  {
+    id: "spdc-waos-spm",
+    client: "Shell Petroleum Development Company of Nigeria Ltd (SPDC)",
+    clientLogo: "/images/logos/shell.png",
+    partner: {
+      name: "West African Oilfield Services Limited (WAOS)",
+      logo: "/images/logos/waos.png"
+    },
+    role: "Draftsman",
+    title: "Refurbishment of Single-Point Mooring (SPM) Buoy & Offshore Drafting",
+    location: "Ogbogoro Jetty, Rivers State • Deep-Water Offshore Terminal",
+    scope: "3-year major engineering campaign: preparation of certified plan general arrangement drawings, side elevations, A-frames, chain tensioning tripods, central swivel piping, and 4-bolt anchor shackles (SWL 130T) conforming to Shell DEP offshore standards.",
+    category: "Oil & Gas",
+    tags: ["SPM Buoy Refurbishment", "Deep-Water Offshore", "Shell DEP Standards", "WAOS Contractor", "Ogbogoro Jetty", "AutoCAD 2D/3D"],
+    jumpLink: "#spm-buoy-section",
+    jumpText: "View 10 Field Photos & CAD Drawings"
+  },
   {
     id: "totalenergies-ccr",
     client: "TotalEnergies EP Nigeria Limited (TEPNG)",
@@ -248,21 +338,6 @@ const corporateContracts: ContractProject[] = [
     tags: ["1,600 sqm Warehouse", "Structural Steel", "Pad Foundations", "Anchor Bolt Setting", "Overhead Crane Beams"],
     jumpLink: "#horandez-warehouse-section",
     jumpText: "View 9 Construction Field Photos"
-  },
-  {
-    id: "spdc-waos-spm",
-    client: "Shell Petroleum Development Company (SPDC)",
-    clientLogo: "/images/logos/shell.png",
-    partner: {
-      name: "West Africa Oilfield Services (WAOS)",
-      logo: "/images/logos/waos.png"
-    },
-    role: "Draftsman AutoCAD",
-    title: "SPM BUOY 12481 Refurbishment & Piping Isometric Drafting",
-    location: "SPDC Offshore Loading Terminal Operations, Rivers State",
-    scope: "Certified AutoCAD drafting for Single-Point Mooring (SPM) Buoy 12481 structural refurbishment, product swivel assembly overhauls, piping isometrics, hawser connection details, and ballast compartment arrangements conforming to Shell DEP offshore standards.",
-    category: "Oil & Gas",
-    tags: ["AutoCAD 2D/3D", "SPM Buoy 12481", "Piping Isometrics", "Shell DEP Standards", "Offshore Marine"]
   },
   {
     id: "totalenergies-intesat-loop",
@@ -360,7 +435,7 @@ export default function ProjectsPage() {
     desc: string; 
     index?: number; 
     total?: number;
-    galleryType?: "army" | "nlng" | "horandez";
+    galleryType?: "army" | "nlng" | "horandez" | "spm";
   } | null>(null);
 
   const categories = ["All", "Oil & Gas", "Civil & Structural", "Industrial Plants", "Procurement & Sourcing"];
@@ -375,6 +450,7 @@ export default function ProjectsPage() {
     let gallery = armyGallery;
     if (lightboxData.galleryType === "nlng") gallery = nlngGallery;
     if (lightboxData.galleryType === "horandez") gallery = horandezGallery;
+    if (lightboxData.galleryType === "spm") gallery = spmGallery;
 
     const currentIdx = lightboxData.index - 1;
     let newIdx = direction === "next" ? currentIdx + 1 : currentIdx - 1;
@@ -412,13 +488,160 @@ export default function ProjectsPage() {
                 Delivered Engineering Contracts & Case Studies
               </h1>
               <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed font-light">
-                Explore our portfolio of verified projects for multinational energy operators, defense institutions, port terminals, and industrial plants across the Niger Delta.
+                Explore our portfolio of verified projects for multinational energy operators, defense institutions, port terminals, and industrial plants across Nigeria.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 1: TOTALENERGIES OML 58 (CCR & Facility Upgrade) */}
+        {/* SECTION 1: SHELL (SPDC) & WAOS — SPM BUOY REFURBISHMENT */}
+        <section id="spm-buoy-section" className="py-14 sm:py-20 bg-slate-950 text-white border-b border-slate-800 scroll-mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Shell & WAOS Client Header Banner */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-slate-900/90 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-1.5 shrink-0 shadow-md">
+                    <Image
+                      src="/images/logos/shell.png"
+                      alt="Shell Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-1.5 shrink-0 shadow-md">
+                    <Image
+                      src="/images/logos/waos.png"
+                      alt="WAOS Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block">
+                    Multinational Energy Operator & Offshore Contractor
+                  </span>
+                  <h3 className="text-base sm:text-xl font-bold text-white font-heading">
+                    Shell (SPDC) / West African Oilfield Services (WAOS)
+                  </h3>
+                  <p className="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span>Ogbogoro Jetty Waterfront Yard, Rivers State • Deep-Water Offshore Installation</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 pt-2 md:pt-0">
+                <span className="px-3 py-1 rounded-full bg-slate-800 text-amber-300 border border-slate-700 text-xs font-mono">
+                  Duration: 3 Years
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
+                  Role: Draftsman (AutoCAD 2D/3D)
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-12 gap-6">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3 border border-emerald-500/30">
+                  <Camera className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Verified Offshore Case Study • 10 CAD Drafts & Waterfront Photos</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
+                  Single-Point Mooring (SPM) Buoy Refurbishment & Engineering Drafting
+                </h2>
+                <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                  Turnkey engineering drafting, dimensional verification, and structural refurbishment of a deep-water offshore Single-Point Mooring (SPM) buoy executed for Shell Petroleum Development Company (SPDC) in direct partnership with West African Oilfield Services Limited (WAOS) at Ogbogoro Jetty over a 3-year campaign.
+                </p>
+              </div>
+
+              {/* Technical Specifications Card */}
+              <div className="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-800 max-w-md shrink-0 shadow-lg">
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Client / Operator</span>
+                    <strong className="text-white font-bold">Shell (SPDC)</strong>
+                  </div>
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Contractor</span>
+                    <strong className="text-white font-bold">WAOS Limited</strong>
+                  </div>
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Installation</span>
+                    <strong className="text-white font-bold">Deep-Water Offshore</strong>
+                  </div>
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Fabrication Base</span>
+                    <strong className="text-white font-bold">Ogbogoro Jetty, Rivers</strong>
+                  </div>
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Position</span>
+                    <strong className="text-white font-bold">Draftsman (David J. James)</strong>
+                  </div>
+                  <div className="bg-slate-950/70 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Anchor Capacity</span>
+                    <strong className="text-white font-bold">SWL 130T (4-Bolt Shackle)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Photos & Drawings Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
+              {spmGallery.map((item, idx) => (
+                <div
+                  key={item.src}
+                  onClick={() => setLightboxData({ 
+                    src: item.src, 
+                    title: item.title, 
+                    desc: item.desc, 
+                    index: idx + 1, 
+                    total: spmGallery.length,
+                    galleryType: "spm"
+                  })}
+                  className="group bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-400 transition-all duration-300 shadow-md hover:shadow-2xl cursor-pointer flex flex-col justify-between"
+                >
+                  <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-slate-950">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      className={`${item.type === "CAD Draft" ? "object-contain bg-white p-1" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-40 group-hover:opacity-70 transition-opacity" />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[9px] font-bold uppercase tracking-wider shadow">
+                      {item.phase}
+                    </span>
+                    <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-slate-900/90 text-white text-[9px] font-mono border border-white/10">
+                      {item.type}
+                    </span>
+                    <span className="absolute bottom-2 right-2 text-white/90 text-[10px] font-mono bg-slate-900/80 px-1.5 py-0.5 rounded border border-white/10">
+                      0{idx + 1}/0{spmGallery.length}
+                    </span>
+                  </div>
+                  <div className="p-3 sm:p-4 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-bold text-white text-xs sm:text-sm mb-1 group-hover:text-amber-400 transition-colors line-clamp-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-300 leading-relaxed line-clamp-2">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-semibold text-amber-400 group-hover:underline mt-2 inline-flex items-center gap-1">
+                      <span>View Fullscreen & High-Res</span> &rarr;
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION 2: TOTALENERGIES OML 58 (CCR & Facility Upgrade) */}
         <section id="totalenergies-ccr-section" className="py-12 sm:py-16 bg-slate-950 border-b border-slate-800 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -517,7 +740,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 2: NIGERIAN ARMY 16 BRIGADE (Military Sports Complex) */}
+        {/* SECTION 3: NIGERIAN ARMY 16 BRIGADE (Military Sports Complex) */}
         <section id="army-complex-section" className="py-14 sm:py-20 bg-white border-b border-slate-100 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -609,7 +832,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 3: NIGERIA LNG LIMITED (NLNG RA FINIMA, BONNY ISLAND) */}
+        {/* SECTION 4: NIGERIA LNG LIMITED (NLNG RA FINIMA, BONNY ISLAND) */}
         <section id="nlng-bonny" className="py-14 sm:py-20 bg-slate-900 text-white border-b border-slate-800 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -717,7 +940,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 4: HORANDEZ & DETROIT COMPANY LTD (40m × 40m Heavy Steel Warehouse) */}
+        {/* SECTION 5: HORANDEZ & DETROIT COMPANY LTD (40m × 40m Heavy Steel Warehouse) */}
         <section id="horandez-warehouse-section" className="py-14 sm:py-20 bg-slate-100 border-b border-slate-200 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -842,7 +1065,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 5: COMPREHENSIVE CORPORATE & FREELANCING CONTRACTS PORTFOLIO */}
+        {/* SECTION 6: COMPREHENSIVE CORPORATE & FREELANCING CONTRACTS PORTFOLIO */}
         <section id="corporate-contracts-portfolio" className="py-14 sm:py-20 bg-slate-50 border-b border-slate-200 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             

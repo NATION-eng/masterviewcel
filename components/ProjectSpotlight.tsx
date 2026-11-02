@@ -165,13 +165,57 @@ export const ProjectSpotlight: React.FC = () => {
 
         </div>
 
-        {/* SECONDARY ROW: Horandez & Detroit Warehouse + NLNG Finima */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {/* SECONDARY ROW: Shell SPM Buoy + Horandez & Detroit Warehouse + NLNG Finima */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
           
-          {/* Horandez & Detroit Steel Warehouse */}
-          <div className="bg-slate-50 p-5 sm:p-8 rounded-3xl border border-slate-200 hover:border-mcel-purple transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          {/* Shell & WAOS SPM Buoy Refurbishment */}
+          <div className="bg-slate-50 p-5 sm:p-6 rounded-3xl border border-slate-200 hover:border-mcel-purple transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
             <div>
-              <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 bg-slate-900">
+              <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 bg-slate-900">
+                <Image
+                  src="/images/spm-buoy/spm-3-onsite-assessment.jpg"
+                  alt="SPM Buoy Refurbishment at Ogbogoro Jetty"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider shadow">
+                  Offshore Marine Drafting
+                </span>
+                <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-amber-300 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 border border-white/10">
+                  <Camera className="w-3 h-3" /> 10 Field & CAD Drafts
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="relative w-8 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+                  <Image src="/images/logos/shell.png" alt="Shell Logo" fill className="object-contain" />
+                </div>
+                <div className="relative w-8 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+                  <Image src="/images/logos/waos.png" alt="WAOS Logo" fill className="object-contain" />
+                </div>
+                <p className="text-xs text-amber-600 font-bold uppercase truncate">
+                  Shell (SPDC) / WAOS
+                </p>
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-heading mb-2 line-clamp-1">
+                SPM Buoy Refurbishment & CAD Drafting
+              </h4>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
+                3-year offshore engineering campaign at Ogbogoro Jetty: certified AutoCAD drafting, structural overhaul, and dimensional verification for Shell (SPDC) via WAOS.
+              </p>
+            </div>
+            <Link
+              href="/projects#spm-buoy-section"
+              className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
+            >
+              <span>Explore 10 CAD & Field Photos</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Horandez & Detroit Steel Warehouse */}
+          <div className="bg-slate-50 p-5 sm:p-6 rounded-3xl border border-slate-200 hover:border-mcel-purple transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+            <div>
+              <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 bg-slate-900">
                 <Image
                   src="/images/horandez/horandez-2-portal-frame.jpg"
                   alt="40m x 40m Steel Warehouse"
@@ -185,23 +229,23 @@ export const ProjectSpotlight: React.FC = () => {
                   <Camera className="w-3 h-3" /> 9 Field Photos
                 </span>
               </div>
-              <div className="flex items-center gap-2.5 mb-2">
-                <div className="relative w-9 h-7 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="relative w-8 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
                   <Image src="/images/logos/horandez-detroit.png" alt="Horandez & Detroit Logo" fill className="object-contain" />
                 </div>
-                <p className="text-xs text-amber-600 font-bold uppercase">
-                  Horandez & Detroit Company Ltd • Iriebe
+                <p className="text-xs text-amber-600 font-bold uppercase truncate">
+                  Horandez & Detroit • Iriebe
                 </p>
               </div>
-              <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
-                40m × 40m Heavy Steel Warehouse & Offices
+              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-heading mb-2 line-clamp-1">
+                40m × 40m Heavy Steel Warehouse
               </h4>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                Civil engineering design, foundation slab construction, and 1,600 sqm clear-span structural steel warehouse erection with an adjoining multi-storey engineering office facility.
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
+                Civil engineering design, foundation slab construction, and 1,600 sqm clear-span structural steel warehouse erection with an adjoining engineering office facility.
               </p>
             </div>
             <Link
-              href="/projects#horandez-warehouse"
+              href="/projects#horandez-warehouse-section"
               className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
             >
               <span>Explore Verified Field Photos (9)</span>
@@ -210,9 +254,9 @@ export const ProjectSpotlight: React.FC = () => {
           </div>
 
           {/* NLNG RA Staff Club Roof Waterproofing */}
-          <div className="bg-slate-50 p-5 sm:p-8 rounded-3xl border border-slate-200 hover:border-mcel-purple transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          <div className="bg-slate-50 p-5 sm:p-6 rounded-3xl border border-slate-200 hover:border-mcel-purple transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
             <div>
-              <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 bg-slate-900">
+              <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 bg-slate-900">
                 <Image
                   src="/images/nlng/nlng-6-membrane-complete.jpg"
                   alt="NLNG Roof Bitumen Re-Felting"
@@ -226,26 +270,26 @@ export const ProjectSpotlight: React.FC = () => {
                   <Camera className="w-3 h-3" /> Field Case Study
                 </span>
               </div>
-              <div className="flex items-center gap-2.5 mb-2">
-                <div className="relative w-9 h-7 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="relative w-8 h-6 bg-white rounded-md p-0.5 shrink-0 border border-slate-200">
                   <Image src="/images/logos/nlng.png" alt="NLNG Logo" fill className="object-contain" />
                 </div>
-                <p className="text-xs text-emerald-700 font-bold uppercase">
-                  Nigeria LNG Limited (NLNG) • Bonny Island
+                <p className="text-xs text-emerald-700 font-bold uppercase truncate">
+                  Nigeria LNG Limited • Bonny
                 </p>
               </div>
-              <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2">
-                30m × 6.3m Roof Bitumen Re-Felting & Waterproofing
+              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-heading mb-2 line-clamp-1">
+                30m × 6.3m Roof Bitumen Re-Felting
               </h4>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                Substrate leveling, sandcrete screed laid to fall, 500mm × 500mm foam glass thermal insulation, and 10mm heavy-duty bitumen felt re-felting across 30m × 6.3m roof expanse under strict NLNG island PTW protocols.
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
+                Substrate leveling, sandcrete screed laid to fall, 500mm × 500mm foam glass insulation, and 10mm heavy-duty bitumen felt re-felting across 30m × 6.3m roof deck.
               </p>
             </div>
             <Link
               href="/projects#nlng-bonny"
               className="inline-flex items-center space-x-1.5 text-xs font-bold text-mcel-purple hover:text-amber-600 transition-colors pt-2"
             >
-              <span>Explore Verified Field Photos</span>
+              <span>Explore Verified Field Photos (9)</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
