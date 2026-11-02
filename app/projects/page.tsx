@@ -492,7 +492,7 @@ const corporateContracts: ContractProject[] = [
   {
     id: "high-grade",
     client: "High Grade Technical Services Limited",
-    clientLogo: "/images/logos/high-grade.png",
+    clientLogo: "/images/logos/high-grade.jpg",
     role: "Procurement Bid Officer / Buyer",
     title: "Multi-Storey Residential Blocks of Flats — Strategic Procurement",
     location: "Port Harcourt Urban District, Rivers State",
