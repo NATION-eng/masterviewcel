@@ -250,10 +250,10 @@ const spmGallery = [
 interface ContractProject {
   id: string;
   client: string;
-  clientLogo: string;
+  clientLogo?: string;
   partner?: {
     name: string;
-    logo: string;
+    logo?: string;
   };
   role: string;
   title: string;
@@ -359,8 +359,7 @@ const corporateContracts: ContractProject[] = [
     client: "TotalEnergies EP Nigeria Limited (TEPNG)",
     clientLogo: "/images/logos/totalenergies.png",
     partner: {
-      name: "Winorac Engineering & Technical Services Ltd",
-      logo: "/images/logos/winorac.png"
+      name: "Winorac Engineering & Technical Services Ltd"
     },
     role: "Intervention Engineer",
     title: "NOPL Owaza Gas Detectors & Instrumentation Earthing Intervention",
@@ -383,7 +382,6 @@ const corporateContracts: ContractProject[] = [
   {
     id: "goddie-chemical",
     client: "Goddie Chemical International Limited",
-    clientLogo: "/images/logos/goddie-chemical.png",
     role: "Design Engineer",
     title: "Industrial Mud Plant Facility Layout & Process Flow Design",
     location: "Trans-Amadi Industrial Layout, Port Harcourt, Rivers State",
@@ -405,7 +403,6 @@ const corporateContracts: ContractProject[] = [
   {
     id: "high-grade",
     client: "High Grade Technical Services Limited",
-    clientLogo: "/images/logos/high-grade.png",
     role: "Procurement Bid Officer / Buyer",
     title: "Multi-Storey Residential Blocks of Flats — Strategic Procurement",
     location: "Port Harcourt Urban District, Rivers State",
@@ -1109,16 +1106,23 @@ export default function ProjectsPage() {
                   className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-mcel-purple"
                 >
                   <div>
-                    {/* Card Header: Client Logo + Role Badge */}
+                    {/* Card Header: Client Logo or Corporate Badge + Role Badge */}
                     <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="relative w-16 h-12 bg-white rounded-xl p-1.5 shrink-0 border border-slate-200 shadow-sm flex items-center justify-center">
-                        <Image
-                          src={contract.clientLogo}
-                          alt={contract.client}
-                          fill
-                          className="object-contain p-1"
-                        />
-                      </div>
+                      {contract.clientLogo ? (
+                        <div className="relative w-16 h-12 bg-white rounded-xl p-1.5 shrink-0 border border-slate-200 shadow-sm flex items-center justify-center">
+                          <Image
+                            src={contract.clientLogo}
+                            alt={contract.client}
+                            fill
+                            className="object-contain p-1"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-16 h-12 bg-slate-100 rounded-xl border border-slate-200 flex flex-col items-center justify-center text-slate-500 shrink-0">
+                          <Building className="w-5 h-5 text-mcel-purple" />
+                          <span className="text-[8px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">Corporate</span>
+                        </div>
+                      )}
                       <div className="flex flex-col items-end gap-1">
                         <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 text-mcel-purple border border-purple-200/60">
                           {contract.role}
@@ -1138,14 +1142,16 @@ export default function ProjectsPage() {
                     {contract.partner && (
                       <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200/80 mb-2 max-w-full">
                         <span className="text-[10px] text-slate-400 shrink-0">Partner:</span>
-                        <div className="relative w-5 h-3.5 shrink-0">
-                          <Image
-                            src={contract.partner.logo}
-                            alt={contract.partner.name}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
+                        {contract.partner.logo && (
+                          <div className="relative w-5 h-3.5 shrink-0">
+                            <Image
+                              src={contract.partner.logo}
+                              alt={contract.partner.name}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        )}
                         <span className="text-[11px] font-semibold text-slate-700 truncate">
                           {contract.partner.name}
                         </span>
