@@ -330,6 +330,44 @@ const librodGallery = [
   }
 ];
 
+const loopsGallery = [
+  {
+    src: "/images/instrument-loops/loop-1-sample-wiring-diagram.jpg",
+    title: "Standardized Field Instrument Loop Drawing (Fire Water Pump)",
+    desc: "Standardized instrumentation loop drawing (Tag 28LI013402C) tracing 24V loop power from UCP panel through marshalling cabinet terminal blocks to PCS system cabinet 28MPCS0421 (Node 08061, Card AAI 143, Ch 10).",
+    phase: "Loop Architecture",
+    type: "ISA-5.1 Diagram"
+  },
+  {
+    src: "/images/instrument-loops/loop-2-compressor-health-monitoring.jpg",
+    title: "Compressor Health Monitoring & Multivariable Deviation Analysis",
+    desc: "Principal component multivariate health monitoring model displaying normal operational boundary envelope versus current operating point, tracking DE vibration (VIB123), NDE vibration (VIB234), and air inlet temp (TI265).",
+    phase: "Condition Monitoring",
+    type: "Diagnostics Plot"
+  },
+  {
+    src: "/images/instrument-loops/loop-3-pid-temperature-tuning.jpg",
+    title: "Closed-Loop Process Temperature PID Controller Tuning",
+    desc: "Real-time process control response comparison demonstrating severe cycling and valve hunting during original tuning versus stabilized setpoint tracking and smooth valve positioning following proportional band (PB) optimization.",
+    phase: "Loop Optimization",
+    type: "Control Response"
+  },
+  {
+    src: "/images/instrument-loops/loop-4-multichannel-wiring-detail.jpg",
+    title: "Field Digital Input Multi-Channel Marshalling Schematic",
+    desc: "Multi-channel loop wiring detail linking field safety switches (82-NF-010012, 82-NF-010014, 82-NF-01003) through marshalling rack terminal blocks (82-MR-001_F) to emergency shutdown (ESD) safety system I/O modules (SDV144-S63).",
+    phase: "Marshalling Racks",
+    type: "Wiring Schematic"
+  },
+  {
+    src: "/images/instrument-loops/loop-5-vba-database-navigation-ui.jpg",
+    title: "Automated Loop Drawing Database & Batch Generator UI",
+    desc: "Custom-developed Excel VBA engineering database interface enabling automated generation, real-time tag search, and one-click batch export (Excel/PDF) of instrument loop drawings across TotalEnergies OML 99 offshore platforms (AMD1, AMD2, AMP, etc.).",
+    phase: "Software Automation",
+    type: "Custom Excel VBA"
+  }
+];
+
 interface ContractProject {
   id: string;
   client: string;
@@ -439,7 +477,9 @@ const corporateContracts: ContractProject[] = [
     location: "OML 99 Offshore & Onshore Platforms (AMD, AMD1, AMD2, AMD3, AMP1, AMP2, AMQ, IKD, OFN)",
     scope: "Engineering standardization, signal tracing, and redrafting of instrumentation loop drawings across 9 key TotalEnergies JV asset platforms. Standardized junction box terminal allocations, marshalling cabinets, and loop data sheets using automated Excel VBA batching tools.",
     category: "Oil & Gas",
-    tags: ["Instrumentation", "Loop Drawings", "OML 99 JV Assets", "Excel Automation", "ISA-5.1 Standards"]
+    tags: ["Instrumentation", "Loop Drawings", "OML 99 JV Assets", "Excel Automation", "ISA-5.1 Standards"],
+    jumpLink: "#instrument-loop-standardization-section",
+    jumpText: "View 5 Standardized Loop Schematics & Automation Renders"
   },
   {
     id: "totalenergies-winorac-nopl",
@@ -522,7 +562,7 @@ export default function ProjectsPage() {
     desc: string; 
     index?: number; 
     total?: number;
-    galleryType?: "army" | "nlng" | "horandez" | "spm" | "librod";
+    galleryType?: "army" | "nlng" | "horandez" | "spm" | "librod" | "loops";
   } | null>(null);
 
   const categories = ["All", "Oil & Gas", "Civil & Structural", "Industrial Plants", "Procurement & Sourcing"];
@@ -539,6 +579,7 @@ export default function ProjectsPage() {
     if (lightboxData.galleryType === "horandez") gallery = horandezGallery;
     if (lightboxData.galleryType === "spm") gallery = spmGallery;
     if (lightboxData.galleryType === "librod") gallery = librodGallery;
+    if (lightboxData.galleryType === "loops") gallery = loopsGallery;
 
     const currentIdx = lightboxData.index - 1;
     let newIdx = direction === "next" ? currentIdx + 1 : currentIdx - 1;
@@ -1299,7 +1340,153 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* SECTION 7: COMPREHENSIVE CORPORATE & FREELANCING CONTRACTS PORTFOLIO */}
+        {/* SECTION 7: TOTALENERGIES & INTESAT — JV SITES INSTRUMENT LOOP DRAWINGS STANDARDIZATION */}
+        <section id="instrument-loop-standardization-section" className="py-14 sm:py-20 bg-slate-900 text-white border-b border-slate-800 scroll-mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* TotalEnergies & Intesat Client Header Banner */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-slate-950/80 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-2 shrink-0 shadow-md">
+                    <Image
+                      src="/images/logos/totalenergies.png"
+                      alt="TotalEnergies Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  <div className="relative w-16 h-12 sm:w-20 sm:h-14 bg-white rounded-xl p-1.5 shrink-0 shadow-md">
+                    <Image
+                      src="/images/logos/intesat.png"
+                      alt="Intesat Services Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block">
+                    Multinational Energy Operator & Instrumentation Partner
+                  </span>
+                  <h3 className="text-base sm:text-xl font-bold text-white font-heading">
+                    TotalEnergies EP Nigeria (TEPNG) / Intesat Services Limited
+                  </h3>
+                  <p className="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span>OML 99 JV Assets (AMD, AMD1, AMD2, AMD3, AMP1, AMP2, AMQ, IKD, OFN Platforms)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 pt-2 md:pt-0">
+                <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-mono">
+                  Scope: 9 Offshore & Onshore Platforms
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
+                  Role: Project Engineer
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-12 gap-6">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-extrabold tracking-wider uppercase mb-3 border border-amber-500/30">
+                  <Camera className="w-3.5 h-3.5 text-amber-400" /> Case Study: TotalEnergies & Intesat • 5 Standardized Loop Schematics & Automation Tools
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
+                  JV Sites Instrument Loop Drawings Standardization & Database Automation
+                </h2>
+                <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                  Engineering standardization, signal tracing, and redrafting of instrumentation loop drawings across 9 key TotalEnergies JV asset platforms. Standardized junction box terminal allocations, marshalling cabinets, PID loop tuning verification, and developed a custom automated Excel VBA batching tool for one-click drawing generation and PDF/Excel export.
+                </p>
+              </div>
+
+              {/* Technical Specifications Card */}
+              <div className="bg-slate-950/90 rounded-2xl p-4 sm:p-5 border border-slate-800 max-w-md shrink-0 shadow-lg">
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Client / Operator</span>
+                    <strong className="text-white font-bold">TotalEnergies (TEPNG)</strong>
+                  </div>
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Engineering Partner</span>
+                    <strong className="text-white font-bold">Intesat Services Ltd</strong>
+                  </div>
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Asset Scope</span>
+                    <strong className="text-white font-bold">9 Platforms (OML 99)</strong>
+                  </div>
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Drawing Standard</span>
+                    <strong className="text-white font-bold">ISA-5.1 & Total GS</strong>
+                  </div>
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Software Automation</span>
+                    <strong className="text-white font-bold">Custom Excel VBA Tool</strong>
+                  </div>
+                  <div className="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+                    <span className="text-slate-400 block text-[10px]">Engineering Role</span>
+                    <strong className="text-white font-bold">Project Engineer</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Loop Schematics & Charts Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {loopsGallery.map((item, idx) => (
+                <div
+                  key={item.src}
+                  onClick={() => setLightboxData({ 
+                    src: item.src, 
+                    title: item.title, 
+                    desc: item.desc, 
+                    index: idx + 1, 
+                    total: loopsGallery.length,
+                    galleryType: "loops"
+                  })}
+                  className="group bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-400 transition-all duration-300 shadow-md hover:shadow-2xl cursor-pointer flex flex-col justify-between"
+                >
+                  <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-white p-2">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/5 group-hover:bg-transparent transition-colors" />
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[9px] font-bold uppercase tracking-wider shadow">
+                      {item.phase}
+                    </span>
+                    <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-slate-900/90 text-white text-[9px] font-mono border border-white/10">
+                      {item.type}
+                    </span>
+                    <span className="absolute bottom-2 right-2 text-white/90 text-[10px] font-mono bg-slate-900/80 px-1.5 py-0.5 rounded border border-white/10">
+                      0{idx + 1}/0{loopsGallery.length}
+                    </span>
+                  </div>
+                  <div className="p-3 sm:p-4 flex-grow flex flex-col justify-between bg-slate-950 border-t border-slate-800">
+                    <div>
+                      <h4 className="font-bold text-white text-xs sm:text-sm mb-1 group-hover:text-amber-300 transition-colors line-clamp-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-300 leading-relaxed line-clamp-2">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-semibold text-amber-400 group-hover:underline mt-2 inline-flex items-center gap-1">
+                      <span>View Fullscreen Schematic</span> &rarr;
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION 8: COMPREHENSIVE CORPORATE & FREELANCING CONTRACTS PORTFOLIO */}
         <section id="corporate-contracts-portfolio" className="py-14 sm:py-20 bg-slate-50 border-b border-slate-200 scroll-mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
