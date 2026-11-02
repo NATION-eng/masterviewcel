@@ -351,6 +351,7 @@ export default function LogisticsPage() {
         isOpen={rfqOpen}
         onClose={() => setRfqOpen(false)}
         defaultService={selectedService}
+        pageContext="logistics"
       />
     </div>
   );

@@ -1271,7 +1271,8 @@ export default function ProjectsPage() {
       <RfqModal
         isOpen={rfqOpen}
         onClose={() => setRfqOpen(false)}
-        defaultService="General Contracting"
+        defaultService="Turnkey Project Tender Inquiry"
+        pageContext="projects"
       />
     </div>
   );

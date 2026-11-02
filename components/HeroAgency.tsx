@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, HardHat } from "lucide-react";
 
@@ -10,7 +11,19 @@ interface HeroAgencyProps {
   onOpenVideo?: () => void;
 }
 
-const slides = [
+interface SlideItem {
+  kicker: string;
+  title: string;
+  desc: string;
+  cta: string;
+  ctaLink?: string;
+  service: string;
+  bgImage: string;
+  rightGraphic: string;
+  graphicAlt: string;
+}
+
+const slides: SlideItem[] = [
   {
     kicker: "— GENERAL ENGINEERING & CONSTRUCTION",
     title: "Engineering Solutions For All Enterprises",
@@ -26,20 +39,22 @@ const slides = [
     title: "Strategic Logistics & Heavy Haulage Across Nigeria",
     desc: "From inventory optimization and SAP material management to heavy-duty maritime port haulage and doorstep delivery, we drive seamless industrial supply continuity.",
     cta: "EXPLORE LOGISTICS",
+    ctaLink: "/logistics",
     service: "Supply Chain & Haulage",
     bgImage: "/images/logistics/port-container-terminal.jpg",
     rightGraphic: "/images/logistics/warehouse-inventory-manager.jpg",
     graphicAlt: "Port Container Haulage & Supply Chain Terminal",
   },
   {
-    kicker: "— DEFENCE & CIVIL INFRASTRUCTURE",
+    kicker: "— CIVIL & INDUSTRIAL INFRASTRUCTURE",
     title: "High-Performance Civil Construction & Turnkey Execution",
-    desc: "Exemplified by the turnkey construction of the 16 Brigade Nigerian Army Sports Complex in Yenagoa, 40m x 40m clear-span steel warehouses, and corporate facilities.",
-    cta: "VIEW ARMY PROJECT",
-    service: "Civil Construction (16 Brigade Yenagoa)",
-    bgImage: "/images/army/army-5-full-pitch.jpg",
-    rightGraphic: "/images/construction/tower-crane-sunset.jpg",
-    graphicAlt: "16 Brigade Nigerian Army Sports Complex Construction",
+    desc: "Turnkey delivery across military sports complexes (16 Brigade Yenagoa), 1,600 sqm clear-span structural steel warehouses (Horandez & Detroit), NLNG thermal roofing, and multi-storey facilities across Nigeria.",
+    cta: "VIEW PROJECT",
+    ctaLink: "/projects",
+    service: "Civil & Industrial Infrastructure",
+    bgImage: "/images/hero-infrastructure.jpg",
+    rightGraphic: "/images/horandez/horandez-2-portal-frame.jpg",
+    graphicAlt: "Civil & Structural Infrastructure Turnkey Projects",
   },
   {
     kicker: "— STEEL & METAL PROJECTS",
@@ -212,15 +227,27 @@ export const HeroAgency: React.FC<HeroAgencyProps> = ({ onOpenRfq, onOpenVideo }
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               
               {/* Primary Pill Button */}
-              <button
-                onClick={onOpenRfq}
-                className="group w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-mcel-purple to-purple-800 hover:from-mcel-purpleLight hover:to-purple-900 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all shadow-xl hover:shadow-purple-950/30 active:scale-95 cursor-pointer border border-white/20"
-              >
-                <span>{active.cta}</span>
-                <span className="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
-                  <ArrowRight className="w-3.5 h-3.5 text-white" />
-                </span>
-              </button>
+              {active.ctaLink ? (
+                <Link
+                  href={active.ctaLink}
+                  className="group w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-mcel-purple to-purple-800 hover:from-mcel-purpleLight hover:to-purple-900 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all shadow-xl hover:shadow-purple-950/30 active:scale-95 cursor-pointer border border-white/20"
+                >
+                  <span>{active.cta}</span>
+                  <span className="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
+                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  </span>
+                </Link>
+              ) : (
+                <button
+                  onClick={onOpenRfq}
+                  className="group w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-mcel-purple to-purple-800 hover:from-mcel-purpleLight hover:to-purple-900 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all shadow-xl hover:shadow-purple-950/30 active:scale-95 cursor-pointer border border-white/20"
+                >
+                  <span>{active.cta}</span>
+                  <span className="w-6 h-6 rounded-full border border-white/40 flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
+                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  </span>
+                </button>
+              )}
 
               {/* Explore Capabilities Trigger */}
               <a

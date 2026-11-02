@@ -27,6 +27,19 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const scrollToContactForm = () => {
+    if (typeof window !== "undefined") {
+      const el = document.getElementById("contact-form");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        const firstInput = el.querySelector("input") as HTMLInputElement;
+        if (firstInput) firstInput.focus();
+        return;
+      }
+    }
+    setRfqOpen(true);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -34,20 +47,20 @@ export default function ContactPage() {
 
   const handleWhatsAppDirect = () => {
     const text = encodeURIComponent(
-      `*MASTERVIEW CONSULTS INQUIRY*\n` +
+      `*MASTERVIEW CONSULTS CORPORATE INQUIRY*\n` +
       `*Name:* ${fullname || "Prospective Client"}\n` +
       `*Company:* ${company || "N/A"}\n` +
       `*Phone:* ${phone || "N/A"}\n` +
-      `*Discipline:* ${service}\n` +
-      `*Scope:* ${message || "Requesting technical consultation."}`
+      `*Inquiry Category:* ${service}\n` +
+      `*Scope / Brief:* ${message || "Requesting technical consultation."}`
     );
     window.open(`https://wa.me/2349036130587?text=${text}`, "_blank");
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
-      <TopBar onOpenRfq={() => setRfqOpen(true)} />
-      <Navbar onOpenRfq={() => setRfqOpen(true)} />
+      <TopBar onOpenRfq={scrollToContactForm} />
+      <Navbar onOpenRfq={scrollToContactForm} />
 
       <main className="flex-grow pb-12 md:pb-0">
         
@@ -177,12 +190,12 @@ export default function ContactPage() {
 
               {/* Consultation Form */}
               <div className="lg:col-span-7">
-                <div className="bg-white p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-xl">
+                <div id="contact-form" className="bg-white p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-xl scroll-mt-24">
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-heading mb-1.5 sm:mb-2">
-                    Technical Inquiry / RFQ Submission
+                    Corporate Tender & Technical Inquiry Desk
                   </h3>
                   <p className="text-slate-500 text-xs sm:text-sm mb-5 sm:mb-6">
-                    Fill out the technical brief below. A senior project engineer will review and respond within 24 business hours.
+                    Submit your project parameters, vendor pre-qualification request, or engineering brief. Our Port Harcourt technical team will review and respond promptly.
                   </p>
 
                   {submitted ? (
@@ -194,7 +207,7 @@ export default function ContactPage() {
                         Inquiry Received!
                       </h4>
                       <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                        Thank you, <strong>{fullname || "Valued Client"}</strong>. Your technical brief has been sent to our procurement & engineering team.
+                        Thank you, <strong>{fullname || "Valued Client"}</strong>. Your technical brief has been sent to our procurement & engineering desk.
                       </p>
                       <button
                         type="button"
@@ -229,7 +242,7 @@ export default function ContactPage() {
                             type="text"
                             value={company}
                             onChange={(e) => setCompany(e.target.value)}
-                            placeholder="e.g. TotalEnergies / Shell"
+                            placeholder="e.g. TotalEnergies / Shell / NLNG"
                             className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-mcel-purple text-slate-900"
                           />
                         </div>
@@ -251,7 +264,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                            Phone Number *
+                            Phone / WhatsApp Number *
                           </label>
                           <input
                             type="tel"
@@ -266,22 +279,22 @@ export default function ContactPage() {
 
                       <div>
                         <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                          Primary Engineering Discipline *
+                          Inquiry Category / Scope of Interest *
                         </label>
                         <select
                           value={service}
                           onChange={(e) => setService(e.target.value)}
                           className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-mcel-purple bg-white text-slate-900"
                         >
-                          <option value="General Inquiry">General Engineering Inquiry</option>
-                          <option value="Construction Works">Construction Works (Civil & Turnkey)</option>
-                          <option value="Electrical Works / Installations">Electrical Works / Installations</option>
-                          <option value="Mechanical Works / Installations">Mechanical Works / Installations</option>
-                          <option value="Steel / Metal Projects">Steel / Metal Projects (Fabrication & Welding)</option>
-                          <option value="Procurement Services">Procurement Services</option>
-                          <option value="Maintenance Services">Facility & Asset Maintenance</option>
-                          <option value="General Consultant">General Engineering Consultancy</option>
-                          <option value="Logistics & Heavy Haulage">Supply Chain & Heavy Haulage Logistics</option>
+                          <option value="General Corporate Inquiry">General Corporate / Head Office Inquiry</option>
+                          <option value="Project Tender & RFP Submission">Project Tender & Technical RFP Submission</option>
+                          <option value="Civil & Turnkey Construction Works">Civil Construction & Turnkey Infrastructure</option>
+                          <option value="Heavy Structural Steel & Portal Frames">Heavy Structural Steel & Warehouse Fabrication</option>
+                          <option value="Offshore CAD Drafting & Buoy Services">Offshore CAD Drafting & Marine Engineering (Shell/WAOS)</option>
+                          <option value="Heavy Haulage Logistics & Port Drayage">Heavy Haulage Logistics, Port Drayage & Distribution</option>
+                          <option value="Technical Procurement & Sourcing">Technical Procurement & Specialized Sourcing</option>
+                          <option value="Facility & Asset Maintenance Services">Facility & Asset Maintenance Services</option>
+                          <option value="Vendor Registration / Partnership">Vendor Registration & Joint Venture Partnership</option>
                         </select>
                       </div>
 
@@ -294,8 +307,8 @@ export default function ContactPage() {
                           required
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
-                          placeholder="Provide details on scope, site location, timeline, or BOQ..."
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-mcel-purple text-slate-900"
+                          placeholder="Provide details on scope, site location, timeline, equipment requirements, or BOQ..."
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-mcel-purple text-slate-900 placeholder:text-slate-400"
                         />
                       </div>
 
@@ -305,7 +318,7 @@ export default function ContactPage() {
                           className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white bg-mcel-purple hover:bg-mcel-purpleLight transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                         >
                           <Send className="w-4 h-4 text-amber-400" />
-                          <span>Submit Technical Brief</span>
+                          <span>Submit Official Inquiry</span>
                         </button>
                         <span className="text-[11px] sm:text-xs text-slate-500 flex items-center justify-center sm:justify-start gap-1.5">
                           <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" /> NDA & Data Privacy Protected
@@ -326,12 +339,13 @@ export default function ContactPage() {
       <Footer />
 
       {/* Mobile Sticky Quick Action Bar */}
-      <MobileActionBar onOpenRfq={() => setRfqOpen(true)} />
+      <MobileActionBar onOpenRfq={scrollToContactForm} />
 
       <RfqModal
         isOpen={rfqOpen}
         onClose={() => setRfqOpen(false)}
-        defaultService="General Engineering Inquiry"
+        defaultService="General Corporate Inquiry"
+        pageContext="contact"
       />
     </div>
   );
