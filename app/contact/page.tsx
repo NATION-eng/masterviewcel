@@ -95,7 +95,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Physical Office</h4>
                       <p className="text-slate-600 text-xs mt-1 leading-relaxed">
-                        2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Port Harcourt, Rivers State, Nigeria.
+                        4 Twin-Dove Complex, Anglican Road, Rumualuogu, Port Harcourt, Rivers State, Nigeria.
                       </p>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                     <h4 className="text-sm sm:text-base font-bold">Priority WhatsApp Response</h4>
                   </div>
                   <a
-                    href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults%20Engineering,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                    href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults,%20I%20would%20like%20to%20inquire%20about%20your%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 rounded-xl bg-white text-emerald-800 font-bold text-xs uppercase hover:bg-emerald-50 transition-colors shadow flex items-center gap-1.5 active:scale-95"
@@ -261,14 +261,14 @@ export default function ContactPage() {
                           className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-mcel-purple bg-white text-slate-900"
                         >
                           <option value="General Inquiry">General Engineering Inquiry</option>
-                          <option value="Oil & Gas Equipment Maintenance">Oil & Gas Equipment Maintenance (API/ISO)</option>
-                          <option value="Calibration Services">Calibration Services (ISO/IEC 17025)</option>
-                          <option value="Logistics & Supply Chain">Logistics & Heavy Haulage</option>
-                          <option value="Fabrication & Welding">Fabrication & Welding (ASME/ASTM)</option>
+                          <option value="Construction Works">Construction Works (Civil & Turnkey)</option>
+                          <option value="Electrical Works / Installations">Electrical Works / Installations</option>
+                          <option value="Mechanical Works / Installations">Mechanical Works / Installations</option>
+                          <option value="Steel / Metal Projects">Steel / Metal Projects (Fabrication & Welding)</option>
                           <option value="Procurement Services">Procurement Services</option>
-                          <option value="Engineering Designs">Engineering Designs (CAD/BIM)</option>
-                          <option value="Civil Construction">Civil Construction & Turnkey Infrastructure</option>
-                          <option value="General Contracting">General Contracting & Turnkey EPC</option>
+                          <option value="Maintenance Services">Facility & Asset Maintenance</option>
+                          <option value="General Consultant">General Engineering Consultancy</option>
+                          <option value="Logistics & Heavy Haulage">Supply Chain & Heavy Haulage Logistics</option>
                         </select>
                       </div>
 

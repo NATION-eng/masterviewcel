@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
             <div className="relative w-11 h-11 sm:w-14 sm:h-14 overflow-hidden shrink-0">
               <Image
                 src="/images/m-cel-logo.jpg"
-                alt="Masterview Consults Engineering Limited Logo"
+                alt="Masterview Consults Logo"
                 fill
                 className="object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                 MASTERVIEW
               </span>
               <span className="block text-[9px] sm:text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">
-                Consults Engineering Ltd
+                CONSULTS
               </span>
             </div>
           </Link>
@@ -186,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                   <div className="relative w-9 h-9 shrink-0">
                     <Image
                       src="/images/m-cel-logo.jpg"
-                      alt="M-CEL Logo"
+                      alt="Masterview Consults Logo"
                       fill
                       className="object-contain"
                     />
@@ -196,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
                       MASTERVIEW
                     </span>
                     <span className="block text-[9px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">
-                      Consults Eng. Ltd
+                      CONSULTS
                     </span>
                   </div>
                 </div>
@@ -334,7 +334,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRfq }) => {
               {/* Drawer Bottom Action Area */}
               <div className="p-5 border-t border-slate-100 bg-white space-y-2.5 shrink-0 pb-safe">
                 <a
-                  href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults%20Engineering,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                  href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults,%20I%20would%20like%20to%20inquire%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-98"

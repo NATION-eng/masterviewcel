@@ -12,11 +12,11 @@ interface HeroAgencyProps {
 
 const slides = [
   {
-    kicker: "— INTEGRATED ENGINEERING & ENERGY",
+    kicker: "— GENERAL ENGINEERING & CONSTRUCTION",
     title: "Engineering Solutions For All Enterprises",
-    desc: "Masterview Consults Engineering Limited delivers world-standard oil & gas maintenance, precision calibration (ISO/IEC 17025), heavy structural fabrication, and turnkey contracting across Nigeria.",
+    desc: "Masterview Consults delivers world-class construction works, electrical & mechanical installations, steel/metal projects, technical procurement, and facility maintenance across Nigeria.",
     cta: "GET CONSULTATION",
-    service: "General Engineering & Energy",
+    service: "Construction & Engineering Works",
     bgImage: "/images/construction/engineers-slab-inspection.jpg",
     rightGraphic: "/images/hero-warehouse.jpg",
     graphicAlt: "Civil & Structural Engineering Slab Inspection",
@@ -42,11 +42,11 @@ const slides = [
     graphicAlt: "16 Brigade Nigerian Army Sports Complex Construction",
   },
   {
-    kicker: "— STRUCTURAL FABRICATION & METROLOGY",
-    title: "Precision Calibration & ASME Structural Fabrication",
-    desc: "Laboratory-standard ISO/IEC 17025 instrument calibration, ASME Section IX certified pipe spool fabrication, and critical facility upgrades across the Niger Delta.",
+    kicker: "— STEEL & METAL PROJECTS",
+    title: "Steel/Metal Projects & Mechanical Installations",
+    desc: "ASME certified structural steel fabrication, high-precision pipe spool welding, industrial mechanical installations, and facility maintenance across Nigeria.",
     cta: "GET CONSULTATION",
-    service: "Calibration & ASME Fabrication",
+    service: "Steel Projects & Mechanical Works",
     bgImage: "/images/construction/fabrication-cutting.jpg",
     rightGraphic: "/images/construction/rebar-steel-fixing.jpg",
     graphicAlt: "ASME Welding and Precision Calibration",

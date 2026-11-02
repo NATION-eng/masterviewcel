@@ -17,7 +17,7 @@ export const ExecutiveMessage: React.FC = () => {
               <div className="relative w-full h-[340px] sm:h-[440px] lg:h-[500px]">
                 <Image
                   src="/images/engr-jonathan-david-ceo.jpg"
-                  alt="Engr. Jonathan David J. - MD/CEO Masterview Consults Engineering Limited"
+                  alt="Engr. Jonathan David J. - MD/CEO Masterview Consults"
                   fill
                   className="object-cover object-top filter brightness-95 group-hover:brightness-100 transition-all duration-500"
                   priority
@@ -89,7 +89,7 @@ export const ExecutiveMessage: React.FC = () => {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-              At <strong>MASTERVIEW Consults Engineering Limited (M-CEL)</strong>, we pride ourselves on delivering multidisciplinary engineering, calibration, procurement, and civil contracting services that exceed both international and Nigerian industry standards.
+              At <strong>MASTERVIEW CONSULTS</strong>, we pride ourselves on delivering multidisciplinary construction works, electrical and mechanical installations, steel/metal projects, technical procurement, and facility maintenance that exceed both international and Nigerian industry standards.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">

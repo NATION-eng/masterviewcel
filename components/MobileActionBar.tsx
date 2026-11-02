@@ -24,7 +24,7 @@ export const MobileActionBar: React.FC<MobileActionBarProps> = ({ onOpenRfq }) =
 
         {/* 2. WhatsApp Direct */}
         <a
-          href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults%20Engineering,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+          href="https://wa.me/2349036130587?text=Hello%20Masterview%20Consults,%20I%20would%20like%20to%20inquire%20about%20your%20services."
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center h-full text-slate-600 hover:text-emerald-600 active:scale-95 transition-all"

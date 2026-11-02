@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <div className="relative w-11 h-11 sm:w-12 sm:h-12 bg-white p-1 rounded-xl shrink-0">
                 <Image
                   src="/images/m-cel-logo.jpg"
-                  alt="M-CEL Logo"
+                  alt="Masterview Consults Logo"
                   fill
                   className="object-contain p-0.5"
                 />
@@ -28,18 +28,18 @@ export const Footer: React.FC = () => {
                   MASTERVIEW CONSULTS
                 </span>
                 <span className="block text-[9px] sm:text-[10px] font-bold text-amber-400 uppercase tracking-widest">
-                  Engineering Limited (M-CEL)
+                  Engineering & Technical Services
                 </span>
               </div>
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Incorporated under the Companies and Allied Matters Act 2020. Providing certified oil & gas equipment maintenance, precision calibration (ISO/IEC 17025), heavy fabrication, civil construction, and logistics solutions across Nigeria.
+              Incorporated under the Companies and Allied Matters Act. Delivering certified construction works, electrical & mechanical installations, steel & metal projects, procurement services, maintenance, and nationwide logistics.
             </p>
 
             <div className="pt-1 flex flex-wrap items-center gap-2 text-xs">
               <span className="px-2.5 py-1 rounded bg-slate-900 text-amber-300 font-mono border border-slate-800 flex items-center gap-1 text-[11px]">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> RC: 7361706
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> RC: 3684306
               </span>
               <span className="px-2.5 py-1 rounded bg-slate-900 text-slate-300 font-mono border border-slate-800 text-[11px]">
                 TIN: 31664498-0001
@@ -69,13 +69,14 @@ export const Footer: React.FC = () => {
               Disciplines
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Oil & Gas Maintenance (API)</Link></li>
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Calibration (ISO 17025)</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Construction Works</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Electrical Works / Installations</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Mechanical Works / Installations</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Steel / Metal Projects</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Procurement Services</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Facility & Asset Maintenance</Link></li>
+              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">General Engineering Consultancy</Link></li>
               <li><Link href="/logistics" className="hover:text-amber-400 transition-colors py-0.5 block">Supply Chain & Haulage</Link></li>
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Structural Steel Fabrication</Link></li>
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Technical Procurement</Link></li>
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">CAD/BIM Engineering Design</Link></li>
-              <li><Link href="/#services" className="hover:text-amber-400 transition-colors py-0.5 block">Civil Infrastructure Works</Link></li>
             </ul>
           </div>
 
@@ -86,7 +87,7 @@ export const Footer: React.FC = () => {
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed mb-3 flex items-start gap-1.5">
               <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <span>2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Port Harcourt, Rivers State, Nigeria.</span>
+              <span>4 Twin-Dove Complex, Anglican Road, Rumualuogu, Port Harcourt, Rivers State, Nigeria.</span>
             </p>
             <p className="text-xs text-slate-300 font-semibold mb-2 flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
@@ -110,7 +111,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Strip */}
         <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-3 text-center sm:text-left">
-          <p>© 2026 Masterview Consults Engineering Limited (M-CEL). All Rights Reserved.</p>
+          <p>© 2026 Masterview Consults. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-center items-center gap-2 text-[11px]">
             <span>COREN: R.79,476</span>
             <span>•</span>

@@ -1,21 +1,20 @@
-# Masterview Consults Engineering Limited (M-CEL)
+# Masterview Consults
 
-The official web platform for **Masterview Consults Engineering Limited (M-CEL)**, an indigenous engineering, procurement, construction, calibration, and logistics firm headquartered in Port Harcourt, Rivers State, Nigeria.
+The official web platform for **Masterview Consults**, an indigenous engineering, construction, procurement, technical maintenance, and logistics firm headquartered in Port Harcourt, Rivers State, Nigeria.
 
 [![Next.js 14](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org)
 [![React 18](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev)
 [![Framer Motion](https://img.shields.io/badge/Motion-Framer-purple.svg)](https://framer.com/motion)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com)
-[![CAC Registered](https://img.shields.io/badge/CAC%20Registered-RC%3A%207361706-gold.svg)](https://www.masterviewcel.com)
+[![CAC Registered](https://img.shields.io/badge/CAC%20Registered-RC%3A%203684306-gold.svg)](https://www.masterviewcel.com)
 
 ---
 
 ## 🏢 Corporate Profile
 
-* **Corporate Entity:** Masterview Consults Engineering Limited
-* **Brand Signature:** M-CEL
-* **Registration:** RC: 7361706 (Federal Republic of Nigeria — CAMA 2020)
-* **Headquarters:** 2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Rivers State, Nigeria
+* **Corporate Entity:** Masterview Consults
+* **Registration:** RC: 3684306 (Federal Republic of Nigeria)
+* **Headquarters:** 4 Twin-Dove Complex, Anglican Road, Rumualuogu, Port Harcourt, Rivers State, Nigeria
 * **Managing Director / CEO:** Engr. Jonathan, David J. (COREN: `R.79,476` • NSE: `66878`)
 * **Contacts:** `09036130587` | `+234 706 383 6336`
 * **Email:** `sales@masterview-eng.com` | `info@masterview-eng.com`
@@ -85,4 +84,4 @@ This repository is optimized for zero-configuration deployment on Vercel:
 
 ## 📄 License & Rights
 
-© 2026 Masterview Consults Engineering Limited (M-CEL). All Rights Reserved.
+© 2026 Masterview Consults. All Rights Reserved.

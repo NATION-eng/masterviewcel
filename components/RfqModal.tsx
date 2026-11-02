@@ -79,7 +79,7 @@ export const RfqModal: React.FC<RfqModalProps> = ({
                 Inquiry Logged Successfully!
               </h4>
               <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{fullname || "Sir/Madam"}</strong>. An engineering representative from Masterview Consults Engineering Limited has logged your specifications and will reach out shortly.
+                Thank you, <strong>{fullname || "Sir/Madam"}</strong>. An engineering representative from Masterview Consults has logged your specifications and will reach out shortly.
               </p>
               
               <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-3">
@@ -172,13 +172,14 @@ export const RfqModal: React.FC<RfqModalProps> = ({
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-mcel-purple focus:border-transparent text-base sm:text-sm text-slate-900 bg-white"
                 >
                   <option value="General Inquiry">General Technical Inquiry</option>
-                  <option value="Oil & Gas Equipment Maintenance">Oil & Gas Equipment Maintenance (API)</option>
-                  <option value="Calibration Services">Instrument Calibration (ISO/IEC 17025)</option>
-                  <option value="Logistics & Heavy Haulage">Logistics, SAP SCM & Heavy Haulage</option>
-                  <option value="Fabrication & Welding">Structural Steel Fabrication & Welding</option>
-                  <option value="Procurement Services">International & Local Technical Procurement</option>
-                  <option value="Engineering Designs">2D Drafting / 3D BIM Modeling</option>
-                  <option value="Civil Construction">Civil Construction & Turnkey Contracting</option>
+                  <option value="Construction Works">Construction Works (Civil & Turnkey)</option>
+                  <option value="Electrical Works / Installations">Electrical Works / Installations</option>
+                  <option value="Mechanical Works / Installations">Mechanical Works / Installations</option>
+                  <option value="Steel / Metal Projects">Steel / Metal Projects (Fabrication & Welding)</option>
+                  <option value="Procurement Services">Procurement Services</option>
+                  <option value="Maintenance Services">Facility & Asset Maintenance</option>
+                  <option value="General Consultant">General Engineering Consultancy</option>
+                  <option value="Logistics & Heavy Haulage">Supply Chain & Heavy Haulage Logistics</option>
                 </select>
               </div>
 

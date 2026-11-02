@@ -28,7 +28,7 @@ export const HseSection: React.FC = () => {
             </h2>
 
             <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed font-light">
-              At Masterview Consults Engineering Limited, Health, Safety, and Environment (HSE) is engineered into every workflow. We operate with an uncompromising standard aimed at zero lost-time injuries, zero environmental spillages, and zero operational downtime.
+              At Masterview Consults, Health, Safety, and Environment (HSE) is engineered into every workflow. We operate with an uncompromising standard aimed at zero lost-time injuries, zero environmental spillages, and zero operational downtime.
             </p>
 
             <div className="space-y-3 pt-1">

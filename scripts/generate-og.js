@@ -84,8 +84,8 @@ async function createOgImage() {
       <text x="88" y="32" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="1.5">
         MASTERVIEW
       </text>
-      <text x="88" y="54" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="3">
-        CONSULTS ENGINEERING LIMITED
+      <text x="88" y="54" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="800" fill="#fbbf24" letter-spacing="4">
+        CONSULTS
       </text>
     </g>
 

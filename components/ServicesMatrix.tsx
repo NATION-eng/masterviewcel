@@ -3,14 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { 
-  Fuel, 
-  Gauge, 
-  Truck, 
+  Building2, 
+  Zap, 
+  Cog, 
   Flame, 
   ShoppingCart, 
+  Wrench, 
   Compass, 
-  Building2, 
-  Briefcase, 
+  Truck, 
   ArrowRight 
 } from "lucide-react";
 
@@ -20,69 +20,69 @@ interface ServicesMatrixProps {
 
 const services = [
   {
-    icon: Fuel,
-    title: "Oil & Gas Equipment Maintenance",
-    standards: ["API Standards", "ISO Protocols"],
-    desc: "Rigorous preventive and corrective maintenance for upstream and midstream assets conforming strictly to API and ISO standards. We maximize operational uptime and ensure safety-critical integrity.",
-    action: "Request Maintenance",
-    category: "energy",
+    icon: Building2,
+    title: "Construction Works",
+    standards: ["Turnkey Civil", "CII & OSHA"],
+    desc: "Turnkey civil engineering works, structural foundations, commercial and industrial buildings, sports complexes (including 16 Brigade Yenagoa), and defense infrastructure.",
+    action: "Request Construction Tender",
+    category: "construction",
   },
   {
-    icon: Gauge,
-    title: "Calibration Services",
-    standards: ["ISO/IEC 17025", "Certified Lab"],
-    desc: "Precision calibration of gas detectors, pressure transmitters, flow meters, and control gauges using state-of-the-art diagnostic testing benches and certified technical personnel.",
-    action: "Schedule Calibration",
-    category: "testing",
+    icon: Zap,
+    title: "Electrical Works / Installations",
+    standards: ["IEEE Standards", "Power Reticulation"],
+    desc: "High and low voltage industrial power distribution, commercial electrical installations, transformer substations, switchgears, and automated backup generator systems.",
+    action: "Consult Electrical Desk",
+    category: "electrical",
+  },
+  {
+    icon: Cog,
+    title: "Mechanical Works / Installations",
+    standards: ["API & ASME", "Machinery QA"],
+    desc: "Industrial mechanical plant installations, rotating equipment assembly, pipe spool networks, HVAC systems, pressure vessels, and comprehensive plant commissioning.",
+    action: "Schedule Mechanical Works",
+    category: "mechanical",
+  },
+  {
+    icon: Flame,
+    title: "Steel / Metal Projects",
+    standards: ["ASME Sec. IX", "Structural Steel"],
+    desc: "Heavy structural steel fabrication, clear-span industrial warehouses, pipe welding, architectural metal framing, and custom skid assemblies certified under strict NDT testing.",
+    action: "Submit Metal Specs",
+    category: "metal-projects",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Procurement Services",
+    standards: ["Global Sourcing", "Audited QA/QC"],
+    desc: "Audited local and international procurement, OEM equipment sourcing, supply chain expediting, vendor prequalification, and Factory Acceptance Testing (FAT) verification.",
+    action: "Inquire Procurement",
+    category: "procurement",
+  },
+  {
+    icon: Wrench,
+    title: "Maintenance Services",
+    standards: ["API Standards", "ISO/IEC 17025"],
+    desc: "Preventive and shutdown maintenance for oil & gas facilities, industrial plants, precision instrument calibration, diagnostic testing, and emergency asset repairs.",
+    action: "Request Maintenance",
+    category: "maintenance",
+  },
+  {
+    icon: Compass,
+    title: "General Consultant",
+    standards: ["COREN Certified", "CAD / BIM 3D"],
+    desc: "Multi-disciplinary engineering consultancy, feasibility studies, 2D drafting, 3D BIM modeling, project supervision, technical risk auditing, and contract administration.",
+    action: "Engage Consultant Desk",
+    category: "consultancy",
   },
   {
     icon: Truck,
     title: "Logistics & Heavy Haulage",
     standards: ["Global SCM", "Port Haulage"],
-    desc: "Multimodal logistics, SAP inventory control, quayside container clearance, and direct-to-site freight haulage engineered to optimize delivery timelines and reduce operational overhead.",
+    desc: "Multimodal logistics, SAP inventory control, quayside container clearance at Onne and Port Harcourt, and direct-to-site freight haulage engineered to optimize delivery timelines.",
     action: "View Logistics Hub",
     link: "/logistics",
     category: "supply-chain",
-  },
-  {
-    icon: Flame,
-    title: "Fabrication & Welding",
-    standards: ["ASME Sec. IX", "ASTM Specs"],
-    desc: "Custom structural steel fabrication, pipe spools, skid assemblies, and structural frames executed by certified welders under rigorous non-destructive testing (NDT) standards.",
-    action: "Submit Fabrication Specs",
-    category: "manufacturing",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Procurement Services",
-    standards: ["Ethical Sourcing", "Audited QA/QC"],
-    desc: "Transparent and audited international procurement. We perform supplier pre-qualification, RFQ management, and factory acceptance test (FAT) verification for mission-critical parts.",
-    action: "Inquire Procurement",
-    category: "sourcing",
-  },
-  {
-    icon: Compass,
-    title: "Engineering Designs",
-    standards: ["ASME & ICE", "CAD / BIM 3D"],
-    desc: "Comprehensive 2D drafting, 3D BIM modeling, process P&ID layout schematics, and finite structural modeling developed in strict compliance with ASME, ICE, and COREN standards.",
-    action: "Consult Design Desk",
-    category: "design",
-  },
-  {
-    icon: Building2,
-    title: "Civil Construction",
-    standards: ["CII Standards", "OSHA Safety"],
-    desc: "Turnkey civil engineering works from reinforced concrete foundations and military sports complexes (16 Brigade Yenagoa) to high-clearance warehouses and multi-storey office blocks.",
-    action: "Civil Tender Inquiries",
-    category: "civil",
-  },
-  {
-    icon: Briefcase,
-    title: "General Contracting",
-    standards: ["Turnkey EPC", "Milestone QA"],
-    desc: "End-to-end project management, contract administration, and ethical execution. We enforce transparent risk management, strict timeline discipline, and budgetary controls.",
-    action: "Discuss Turnkey Contract",
-    category: "contracting",
   },
 ];
 
@@ -97,10 +97,10 @@ export const ServicesMatrix: React.FC<ServicesMatrixProps> = ({ onSelectService 
             <span>Capabilities & Disciplines</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
-            Our Eight Pillars of Engineering Excellence
+            Our Core Disciplines & Official Services
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm md:text-base mt-3 leading-relaxed">
-            Delivering multidisciplinary solutions adhering strictly to recognized global benchmarks including API, ISO/IEC 17025, ASTM, ASME, CII, and OSHA.
+            Delivering multidisciplinary solutions adhering strictly to recognized global and Nigerian engineering benchmarks including API, ISO/IEC 17025, ASTM, ASME, CII, and OSHA.
           </p>
         </div>
 

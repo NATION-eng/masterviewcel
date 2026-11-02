@@ -59,7 +59,7 @@ export default function LogisticsPage() {
               </h1>
 
               <p className="text-slate-300 text-xs sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 font-light">
-                Masterview Consults Engineering Limited deploys world-class supply chain strategies—from automated SAP inventory control and quayside port clearance to heavy equipment haulage and precision last-mile distribution across Nigeria.
+                Masterview Consults deploys world-class supply chain strategies—from automated SAP inventory control and quayside port clearance to heavy equipment haulage and precision last-mile distribution across Nigeria.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -293,7 +293,7 @@ export default function LogisticsPage() {
                 </h2>
 
                 <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed font-light">
-                  When mission-critical refinery equipment, drilling chemicals, or emergency spares require expedited movement, M-CEL orchestrates multimodal air-to-road logistics that eliminate plant downtime.
+                  When mission-critical refinery equipment, drilling chemicals, or emergency spares require expedited movement, Masterview Consults orchestrates multimodal air-to-road logistics that eliminate plant downtime.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-1">

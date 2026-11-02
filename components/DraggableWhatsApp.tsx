@@ -61,7 +61,7 @@ export const DraggableWhatsApp: React.FC = () => {
     }
 
     window.open(
-      "https://wa.me/2349036130587?text=Hello%20Masterview%20Consults%20Engineering,%20I%20would%20like%20to%20inquire%20about%20your%20services.",
+      "https://wa.me/2349036130587?text=Hello%20Masterview%20Consults,%20I%20would%20like%20to%20inquire%20about%20your%20services.",
       "_blank",
       "noopener,noreferrer"
     );

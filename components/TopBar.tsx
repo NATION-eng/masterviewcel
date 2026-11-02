@@ -16,7 +16,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenRfq }) => {
         <div className="flex items-center space-x-5 text-[11px] font-medium">
           <div className="hidden lg:flex items-center space-x-1.5 text-slate-500 hover:text-slate-800 transition-colors">
             <MapPin className="w-3.5 h-3.5 text-mcel-purple shrink-0" />
-            <span>2nd Floor Salije Plaza, Ada George Road, Mgbuoba, Port Harcourt</span>
+            <span>4 Twin-Dove Complex, Anglican Road, Rumualuogu, Port Harcourt</span>
           </div>
           <div className="flex items-center space-x-3 text-slate-500">
             <a href="mailto:info@masterview-eng.com" className="hover:text-mcel-purple transition-colors flex items-center gap-1.5">
